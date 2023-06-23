@@ -2,7 +2,7 @@
 https://www.figma.com/file/x4PgmMIGZBC3dE9H9c7aZ7/%E7%84%A1%E9%A1%8C?type=design&node-id=0%3A1&mode=design&t=G1nv1Jj79mYlmwZS-1
 
 ### ER図
-[![ER図](https://i.gyazo.com/dc0ddbd2087fece2d321fb61a896ea0b.png)](https://gyazo.com/dc0ddbd2087fece2d321fb61a896ea0b)
+[![Image from Gyazo](https://i.gyazo.com/2a153f666d0ee518865054e7c77526c1.png)](https://gyazo.com/2a153f666d0ee518865054e7c77526c1)
 
 ### サービス概要
 辛い思い出や苦い経験をした人の
