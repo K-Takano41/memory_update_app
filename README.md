@@ -1,6 +1,9 @@
 ### 状態遷移図
 https://www.figma.com/file/x4PgmMIGZBC3dE9H9c7aZ7/%E7%84%A1%E9%A1%8C?type=design&node-id=0%3A1&mode=design&t=G1nv1Jj79mYlmwZS-1
 
+### ER図
+[![ER図](https://i.gyazo.com/dc0ddbd2087fece2d321fb61a896ea0b.png)](https://gyazo.com/dc0ddbd2087fece2d321fb61a896ea0b)
+
 ### サービス概要
 辛い思い出や苦い経験をした人の
 忘れられない嫌な出来事を良い出来事で上塗りして
