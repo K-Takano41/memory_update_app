@@ -70,3 +70,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "pry-rails"
+gem "bootstrap"
+gem "font-awesome-sass"
+gem "jquery-rails"
