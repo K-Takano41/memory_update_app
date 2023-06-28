@@ -12,8 +12,7 @@
 
   <body>
     <%= render "shared/before_login_header" %>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= render "shared/flash_message" %>
+    <%= yield %>
   </body>
 </html>
