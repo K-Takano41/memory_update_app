@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  resources :users, only: %i[new create show edit update destroy]
   root to: "top#top"
+  get 'login', to: "user_sessions#new"
+  post 'login', to: "user_sessions#create"
+  delete 'logout', to: "user_sessions#destroy"
+  resources :users, only: %i[new create show edit update destroy]
 end
