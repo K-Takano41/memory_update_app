@@ -1,11 +1,11 @@
 <header>
   <nav class="navbar navbar-expand-lg navigation navbar-light">
     <div class="container-fluid">
-      <%= link_to "Memory Update", "root_path", class: "navbar-brand fst-italic fw-bold" %>
+      <%= link_to "Memory Update", root_path, class: "navbar-brand fst-italic fw-bold text-white" %>
       <div class="justify-content-start">
         <%= link_to "イラスト一覧", "#", class: "btn btn-info" %>
         <%= link_to t('users.new.title'), new_user_path, class: "btn btn-primary" %>
-        <%= link_to t('defaults.login'), "#", class: "btn btn-primary" %>
+        <%= link_to t('defaults.login'), login_path, class: "btn btn-primary" %>
       </div>
     </div>
   </nav>
