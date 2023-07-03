@@ -70,7 +70,7 @@ https://www.figma.com/file/x4PgmMIGZBC3dE9H9c7aZ7/%E7%84%A1%E9%A1%8C?type=design
 - postgresql
 - JavaScript
 - Bootstrap
-- heroku
+- fly.io
 - stability AI API(stable diffusion)(イラスト生成)
 
 ### 指摘箇所への解答
