@@ -22,8 +22,12 @@
           <%= form.password_field :password_confirmation, class: "form-control" %>
         </div>
         <div class="text-center">
-          <%= form.submit class: "btn btn-primary mb-3" %>
+          <%= form.submit class: "btn btn-primary" %>
         </div>
+      <% end %>
+      <p class="text-center my-1">OR</p>
+      <%= button_to "/auth/twitter2", method: :post, data: { turbo: false }, class: "btn btn-primary mb-3 d-block mx-auto" do %>
+        <i class="fa-brands fa-twitter"></i> Sign in with Twitter
       <% end %>
     </div>
   </div>

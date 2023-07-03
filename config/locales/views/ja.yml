@@ -3,17 +3,15 @@ ja:
     login: 'ログイン'
     logout: 'ログアウト'
     password_message: '8文字以上・アルファベット大文字・小文字・数字・記号'
+    login_success: 'ログインしました'
+    login_failure: 'ログインに失敗しました'
+    logout_success: 'ログアウトしました'
+    auto_login: 'ユーザー登録完了 ログインしました'
   users:
     new:
       title: 'ユーザー登録'
     create:
-      success: 'ユーザー登録が完了しました'
       danger: 'ユーザー登録に失敗しました'
   user_sessions:
     new:
       title: 'ログイン'
-    create:
-      success: 'ログインしました'
-      danger: 'ログインに失敗しました'
-    destroy:
-      success: 'ログアウトしました'
