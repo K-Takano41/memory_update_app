@@ -3,6 +3,7 @@
     <div class="container-fluid">
       <%= link_to "Memory Update", root_path, class: "navbar-brand fst-italic fw-bold text-light" %>
       <div class="justify-content-start">
+        <%= current_user.name %>
         <%= link_to "イラスト一覧", "#", class: "btn btn-info" %>
         <%= link_to "マイページ", "#", class: "btn btn-info" %>
         <%= link_to "新規投稿", "#", class: "btn btn-info" %>
