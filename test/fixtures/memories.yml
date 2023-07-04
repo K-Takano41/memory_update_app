@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bad_image: MyString
+  good_image: MyString
+  user: one
+
+two:
+  bad_image: MyString
+  good_image: MyString
+  user: two

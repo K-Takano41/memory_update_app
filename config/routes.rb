@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post 'login', to: "user_sessions#create"
   delete 'logout', to: "user_sessions#destroy"
   resources :users, only: %i[new create show edit update destroy]
+  resources :bad_events, only: %i[new create show edit update destroy]
 end

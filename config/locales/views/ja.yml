@@ -15,3 +15,9 @@ ja:
   user_sessions:
     new:
       title: 'ログイン'
+  bad_events:
+    new:
+      title: 'エピソード登録'
+    create:
+      success: 'エピソードを登録しました'
+      danger: 'エピソード登録に失敗しました'
