@@ -1,5 +1,10 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+
+  has_many :memories, dependent: :destroy
+  has_many :bad_events, through: :memories
+  has_many :good_events, through: :memories
+
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)(?=.*?[\W_])[!-~]{8,}+\z/
   validates :password, format: { with: VALID_PASSWORD_REGEX }
   validates :password, length: { minimum: 8}, if: -> { new_record? || changes[:crypted_password] }

@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <%= render partial: "shared/error_messages",  locals: { object: @user }%>
     <h2 class="text-center"><%= t('.title') %></h2>
-    <div class="col-6 col-md-4 bg-white border border-dark pt-3">
+    <div class="col-4 bg-white border border-dark pt-3">
       <%= form_with model: @user, local: true do |form| %>
         <div class="form-group mb-3">
           <%= form.label :name %>
@@ -21,9 +21,7 @@
           <%= form.label :password_confirmation %>
           <%= form.password_field :password_confirmation, class: "form-control" %>
         </div>
-        <div class="text-center">
-          <%= form.submit class: "btn btn-primary" %>
-        </div>
+        <%= form.submit class: "btn btn-primary d-block mx-auto" %>
       <% end %>
       <p class="text-center my-1">OR</p>
       <%= button_to "/auth/twitter2", method: :post, data: { turbo: false }, class: "btn btn-primary mb-3 d-block mx-auto" do %>
