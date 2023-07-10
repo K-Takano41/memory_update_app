@@ -2,7 +2,8 @@ ja:
   defaults:
     login: 'ログイン'
     logout: 'ログアウト'
-    password_message: '8文字以上・アルファベット大文字・小文字・数字・記号'
+    success: '成功'
+    failure: '失敗'
     login_success: 'ログインしました'
     login_failure: 'ログインに失敗しました'
     logout_success: 'ログアウトしました'
@@ -10,6 +11,7 @@ ja:
   users:
     new:
       title: 'ユーザー登録'
+      password_html: '8文字以上・アルファベット大文字・小文字・数字・記号'
     create:
       danger: 'ユーザー登録に失敗しました'
   user_sessions:

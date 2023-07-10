@@ -16,7 +16,8 @@
     <% else %>
       <%= render "shared/before_login_header" %>
     <% end %>
-    <%= render "shared/flash_message" %>
+    <%= turbo_stream_flash %>
     <%= yield %>
+    <div id="flashes" class="position-fixed top-0 end-0 m-2"></div>
   </body>
 </html>

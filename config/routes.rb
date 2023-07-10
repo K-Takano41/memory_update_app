@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'choices', to: "choices#choices"
   root to: "top#top"
   get 'auth/:provider/callback', to: "twitter_sessions#create"
   get 'auth/failure', to: "twitter_sessions#failure"

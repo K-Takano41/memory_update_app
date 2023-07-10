@@ -1,0 +1,30 @@
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal fade" data-controller="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">タイトル</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= turbo_frame_tag "choices" do %>
+            <div class="d-flex flex-wrap">
+              <div class="flex-fill mb-1">
+                <%= link_to "bad", choices_path(choice: "bad"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
+              </div>
+              <div class="flex-fill mb-1">
+                <%= link_to "fear", choices_path(choice: "fear"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
+              </div>
+              <div class="flex-fill mb-1">
+                <%= link_to "sad", choices_path(choice: "sad"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
+              </div>
+              <div class="flex-fill mb-1">
+                <%= link_to "painful", choices_path(choice: "painful"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
