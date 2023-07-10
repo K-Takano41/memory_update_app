@@ -1,13 +1,15 @@
+<%= turbo_frame_tag "modal" %>
 <div class="container pt-3">
   <div class="row justify-content-center">
-    <%= render partial: "shared/error_messages",  locals: { object: @bad_event }%>
     <h2 class="text-center"><%= t('.title') %></h2>
     <div class="col-6 bg-white border border-dark pt-3 mt-5">
-      <%= form_with model: @bad_event, local: true do |form| %>
-        <div class="col-8 border border-dark mx-auto my-4">
-          <%= form.text_area :body, class: "form-control", rows: "5" %>
+      <%= bootstrap_form_with(model: @bad_event, data: { turbo_frame: "modal"}) do |form| %>
+        <div class="col-8 mx-auto my-4">
+          <%= form.text_area :body, skip_label: true, rows: "5" %>
         </div>
-        <%= form.submit class: "btn btn-primary d-block mx-auto my-3" %>
+        <div class="text-center mb-3">
+          <%= form.primary %>
+        </div>
       <% end %>
     </div>
   </div>
