@@ -1,5 +1,6 @@
 class ChoicesController < ApplicationController
   def choices
+    @bad_event = BadEvent.find(params[:id])
     current_choice = params[:choice]
     @next_choices = next_choices(current_choice)
   end

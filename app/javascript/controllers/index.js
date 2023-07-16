@@ -2,12 +2,6 @@
 
 import { application } from "controllers/application"
 
-import ToastController from "./toast_controller.js"
-application.register("toast", ToastController)
-
-import ModalController from "./modal_controller.js"
-application.register("modal", ModalController)
-
 // Eager load all controllers defined in the import map under controllers/**/*_controller
 import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
 eagerLoadControllersFrom("controllers", application)

@@ -10,16 +10,16 @@
           <%= turbo_frame_tag "choices" do %>
             <div class="d-flex flex-wrap">
               <div class="flex-fill mb-1">
-                <%= link_to "bad", choices_path(choice: "bad"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
+                <%= link_to "bad", choices_bad_event_path(bad_event, choice: "bad"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
               </div>
               <div class="flex-fill mb-1">
-                <%= link_to "fear", choices_path(choice: "fear"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
+                <%= link_to "fear", choices_bad_event_path(bad_event, choice: "fear"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
               </div>
               <div class="flex-fill mb-1">
-                <%= link_to "sad", choices_path(choice: "sad"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
+                <%= link_to "sad", choices_bad_event_path(bad_event, choice: "sad"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
               </div>
               <div class="flex-fill mb-1">
-                <%= link_to "painful", choices_path(choice: "painful"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
+                <%= link_to "painful", choices_bad_event_path(bad_event, choice: "painful"), class: "btn btn-primary btn-block", data: { turbo_frame: "choices"} %>
               </div>
             </div>
           <% end %>
