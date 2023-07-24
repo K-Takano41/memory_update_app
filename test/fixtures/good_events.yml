@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyText
+  date: 2023-07-24 06:56:47
+  memory: one
+
+two:
+  title: MyString
+  body: MyText
+  date: 2023-07-24 06:56:47
+  memory: two

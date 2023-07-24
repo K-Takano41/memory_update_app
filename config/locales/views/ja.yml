@@ -8,6 +8,8 @@ ja:
     login_failure: 'ログインに失敗しました'
     logout_success: 'ログアウトしました'
     auto_login: 'ユーザー登録完了 ログインしました'
+    my_page: 'マイページ'
+    new: '新規投稿'
   users:
     new:
       title: 'ユーザー登録'

@@ -5,8 +5,8 @@
       <div class="justify-content-start">
         <%= current_user.name %>
         <%= link_to "イラスト一覧", "#", class: "btn btn-info" %>
-        <%= link_to "マイページ", "#", class: "btn btn-info" %>
-        <%= link_to "新規投稿", new_bad_event_path, class: "btn btn-info" %>
+        <%= link_to t('defaults.my_page'), user_path(current_user), class: "btn btn-info" %>
+        <%= link_to t('defaults.new'), new_bad_event_path, class: "btn btn-info" %>
         <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "btn btn-primary" %>
       </div>
     </div>

@@ -1,4 +1,5 @@
 class BadEventsController < ApplicationController
+  before_action :set_bad_event, only: %i[show]
   def new
     @bad_event = BadEvent.new
   end
@@ -16,6 +17,7 @@ class BadEventsController < ApplicationController
   end
 
   def show
+    @memory = @bad_event.memory
   end
 
   def edit
@@ -28,6 +30,10 @@ class BadEventsController < ApplicationController
   end
 
   private
+
+  def set_bad_event
+    @bad_event = BadEvent.find(params[:id])
+  end
 
   def bad_event_params
     params.require(:bad_event).permit(:body)

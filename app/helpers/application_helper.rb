@@ -11,4 +11,8 @@ module ApplicationHelper
   def turbo_stream_flash
     turbo_stream.append "flashes", partial: "shared/flash_message"
   end
+
+  def nl2br(str)
+    h(str).gsub(/\R/, "<br>")
+  end
 end

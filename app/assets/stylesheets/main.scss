@@ -5,3 +5,54 @@ body {
 header {
   background-color: #0B9B08;
 }
+
+.sidebar {
+  background-color: #00ff7f;
+}
+
+menu {
+  li {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  
+    &:hover{
+      color: #ff0080;
+    }
+  }
+}
+
+.rounded-pill {
+  height: 60px;
+}
+
+.fa-size {
+  font-size: 3em;
+}
+
+#toggle-button {
+  text-decoration: none;
+  color: black;
+}
+
+#event-body {
+  display: none;
+}
+
+.btn-good-event {
+  background-color: #F5E1B9;
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  
+  &:hover{
+    color: black;
+  }
+}

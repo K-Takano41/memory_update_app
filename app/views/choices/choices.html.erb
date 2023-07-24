@@ -1,9 +1,0 @@
-<%= turbo_frame_tag "choices" do %>
-  <% @next_choices.each do |choice| %>
-    <div class="row">
-      <div class="col-sm-6 m-1">
-        <%= link_to choice, image_bad_event_path(@bad_event), data: { turbo: false }, class: "btn btn-primary" %>
-      </div>
-    </div>
-  <% end %>
-<% end %>
