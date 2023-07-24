@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_03_075117) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_24_065647) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_075117) do
     t.index ["memory_id"], name: "index_bad_events_on_memory_id"
   end
 
+  create_table "good_events", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body", null: false
+    t.datetime "date", null: false
+    t.bigint "memory_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["memory_id"], name: "index_good_events_on_memory_id"
+  end
+
   create_table "memories", force: :cascade do |t|
     t.string "bad_image"
     t.string "good_image"
@@ -29,6 +39,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_075117) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_memories_on_user_id"
+  end
+
+  create_table "prompts", force: :cascade do |t|
+    t.text "bad_prompt", null: false
+    t.text "good_prompt", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "question", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,5 +61,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_075117) do
   end
 
   add_foreign_key "bad_events", "memories"
+  add_foreign_key "good_events", "memories"
   add_foreign_key "memories", "users"
 end
