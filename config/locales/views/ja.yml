@@ -4,12 +4,17 @@ ja:
     logout: 'ログアウト'
     success: '成功'
     failure: '失敗'
+    warning: '警告'
     login_success: 'ログインしました'
     login_failure: 'ログインに失敗しました'
     logout_success: 'ログアウトしました'
     auto_login: 'ユーザー登録完了 ログインしました'
     my_page: 'マイページ'
     new: '新規投稿'
+    edit: '編集'
+    event_success: 'エピソードを登録しました'
+    event_danger: 'エピソード登録に失敗しました'
+    login_message: 'ログインしてください'
   users:
     new:
       title: 'ユーザー登録'
@@ -19,9 +24,14 @@ ja:
   user_sessions:
     new:
       title: 'ログイン'
+  memories:
+    show:
+      event_show: '投稿したエピソードを見る'
+      new_good_event: '良かった出来事を投稿する'
   bad_events:
     new:
       title: 'エピソード登録'
-    create:
-      success: 'エピソードを登録しました'
-      danger: 'エピソード登録に失敗しました'
+  good_events:
+    update:
+      success: 'エピソードを更新しました'
+      danger: 'エピソードの更新に失敗しました'

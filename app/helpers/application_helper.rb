@@ -5,6 +5,8 @@ module ApplicationHelper
       t('defaults.success')
     elsif message_type == 'danger'
       t('defaults.failure')
+    elsif message_type == 'warning'
+      t('defaults.warning')
     end
   end
 

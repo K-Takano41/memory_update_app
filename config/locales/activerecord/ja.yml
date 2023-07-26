@@ -3,6 +3,7 @@ ja:
     models:
       user: 'ユーザー'
       bad_event: '嫌な出来事'
+      good_event: '良かった出来事'
     attributes:
       user:
         name: '名前'
@@ -11,6 +12,10 @@ ja:
         password_confirmation: 'パスワード(確認)'
       bad_event:
         body: 'エピソード'
+      good_event:
+        title: 'タイトル'
+        body: 'エピソード'
+        date: '日付'
     
   enums:
     user:

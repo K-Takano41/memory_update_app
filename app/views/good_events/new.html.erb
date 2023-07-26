@@ -1,2 +1,6 @@
-<h1>GoodEvents#new</h1>
-<p>Find me in app/views/good_events/new.html.erb</p>
+<div class="col-6 offset-1">
+  <h2 class="text-center mt-2"><%= GoodEvent.model_name.human %></h2>
+  <div class="bg-white border border-dark pt-2 mt-2">
+    <%= render partial: "form", locals: { memory: @memory, good_event: @good_event} %>
+  </div>
+</div>

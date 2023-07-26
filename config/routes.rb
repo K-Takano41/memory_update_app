@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'good_events/new'
-  get 'good_events/create'
-  get 'good_events/show'
-  get 'good_events/edit'
-  get 'good_events/update'
-  get 'good_events/destroy'
   namespace :admin do
     resources :prompts
   end
@@ -19,9 +13,10 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
   resources :users, only: %i[new create show]
-  resources :bad_events, only: %i[new create show] do
-    member do
-      get 'image', to: 'memories#image'
-    end
+  resources :bad_events, only: %i[new create] do
+    get 'image', to: 'images#generate'
+  end
+  resources :memories, only: %i[show], shallow: true do
+    resources :good_events, only: %i[new create show edit update]
   end
 end
