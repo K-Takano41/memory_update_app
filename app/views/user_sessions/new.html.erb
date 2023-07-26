@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <h2 class="text-center"><%= t('.title') %></h2>
     <div class="col-4 bg-white border border-dark pt-3 mt-5">
-      <%= bootstrap_form_with(url: login_path) do |form| %> 
+      <%= bootstrap_form_with(url: login_path, local: true) do |form| %> 
         <%= form.email_field :email, label: User.human_attribute_name(:email) %>
         <%= form.password_field :password, label: User.human_attribute_name(:password) %>
         <div class="text-center">

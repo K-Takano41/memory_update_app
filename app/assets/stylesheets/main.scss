@@ -8,6 +8,7 @@ header {
 
 .sidebar {
   background-color: #00ff7f;
+  height: 500px;
 }
 
 menu {
@@ -33,7 +34,7 @@ menu {
   font-size: 3em;
 }
 
-#toggle-button {
+#toggle-button, .btn-edit{
   text-decoration: none;
   color: black;
 }
@@ -55,4 +56,8 @@ menu {
   &:hover{
     color: black;
   }
+}
+
+.fa-solid.fa-face-laugh-beam {
+  color: #ffdd00;
 }

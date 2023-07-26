@@ -8,15 +8,16 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
+  
   <body>
-    <% if logged_in? %>
-      <%= render "shared/header" %>
-    <% else %>
-      <%= render "shared/before_login_header" %>
-    <% end %>
+    <%= render "shared/header" %>
     <%= turbo_stream_flash %>
-    <%= yield %>
+    <div class="container-fluid vh-100">
+      <div class="row">
+        <%= render "shared/sidebar" %>
+        <%= yield %>
+      </div>
+    </div>
     <div id="flashes" class="position-fixed top-0 end-0 m-2"></div>
   </body>
 </html>

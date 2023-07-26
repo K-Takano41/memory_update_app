@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navigation navbar-light">
     <div class="container-fluid">
       <%= link_to "Memory Update", root_path, class: "navbar-brand fst-italic fw-bold text-light" %>
-      <div class="justify-content-start">
+      <div>
         <%= current_user.name %>
         <%= link_to "イラスト一覧", "#", class: "btn btn-info" %>
         <%= link_to t('defaults.my_page'), user_path(current_user), class: "btn btn-info" %>

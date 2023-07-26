@@ -6,12 +6,12 @@ class BadEventsController < ApplicationController
 
   def create
     @memory = current_user.memories.build
-    @bad_event = @memory.bad_events.build(bad_event_params)
+    @bad_event = @memory.build_bad_event(bad_event_params)
     if @memory.save
-      flash.now[:success] = t('.success')
+      flash.now[:success] = t('defaults.event_success')
       # render turbo_stream: turbo_stream.replace('modal', partial: "shared/modal")
     else
-      flash.now[:danger] = t('.danger')
+      flash.now[:danger] = t('defaults.event_danger')
       render turbo_stream: turbo_stream.append('flashes', partial: "shared/flash_message"), status: :unprocessable_entity
     end
   end

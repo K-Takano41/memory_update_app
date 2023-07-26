@@ -10,7 +10,7 @@
           <div class="d-flex flex-wrap">
             <% Prompt.all.each do |prompt| %>
               <div class="flex-fill mb-1">
-                <%= link_to prompt.question, image_bad_event_path(bad_event, prompt_id: prompt.id), class: "btn btn-primary btn-block", data: { turbo: false } %>
+                <%= link_to prompt.question, bad_event_image_path(bad_event, prompt_id: prompt.id), class: "btn btn-primary btn-block", data: { turbo: false } %>
               </div>
             <% end %>
           </div>

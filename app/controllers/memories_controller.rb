@@ -1,11 +1,12 @@
 class MemoriesController < ApplicationController
-  def image
-    @bad_event = BadEvent.find(params[:id])
-    @memory = @bad_event.memory
-    @prompt = Prompt.find(params[:prompt_id])
-    @memory.bad_image = "bad_image/#{@prompt.bad_prompt}"
-    @memory.save
-    GenerateGoodImageJob.perform_later(@memory.id, @prompt.id)
-    redirect_to bad_event_path
+  layout 'sidebar_layout'
+  before_action :set_memory, only: %i[show]
+  def show
+    @bad_event = @memory.bad_event
+  end
+
+  private
+  def set_memory
+    @memory = Memory.find(params[:id])
   end
 end
