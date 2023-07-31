@@ -1,5 +1,5 @@
 $(document).on('turbo:load', function(){
-  $('#toggle-button').click(function(){
+  $('#toggle-button').on('click', function(){
     $('#event-body').toggle();
   })
 })
