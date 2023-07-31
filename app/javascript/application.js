@@ -1,8 +1,7 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-//= require jquery3
-//= require popper
-//= require bootstrap
-//= require bootstrap-sprockets
-//= require index
+//= require jquery
+//= require toggle
 import "@hotwired/turbo-rails"
 import "controllers"
+import "bootstrap"
+import "@popperjs/core"
+import "animejs"

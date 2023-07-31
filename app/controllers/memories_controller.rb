@@ -1,8 +1,17 @@
 class MemoriesController < ApplicationController
   layout 'sidebar_layout'
-  before_action :set_memory, only: %i[show]
+  before_action :set_memory, only: %i[show page]
   def show
-    @bad_event = @memory.bad_event
+    if @memory.after? && @memory.good_events.count < 5
+      @memory.before!
+    end
+  end
+
+  def page
+    if @memory.before? && @memory.good_events.count == 5
+      @memory.after!
+    end
+    redirect_to memory_path
   end
 
   private
