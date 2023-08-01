@@ -1,6 +1,10 @@
 class MemoriesController < ApplicationController
   layout 'sidebar_layout'
   before_action :set_memory, only: %i[show page]
+  def index
+    @memories = current_user.memories
+  end
+
   def show
     if @memory.after? && @memory.good_events.count < 5
       @memory.before!
