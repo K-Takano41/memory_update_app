@@ -1,13 +1,23 @@
 <header>
   <nav class="navbar navbar-expand-lg navigation navbar-light">
-    <div class="container-fluid">
-      <%= link_to "Memory Update", root_path, class: "navbar-brand fst-italic fw-bold text-light" %>
-      <div>
-        <%= current_user.name %>
-        <%= link_to "イラスト一覧", "#", class: "btn btn-info" %>
-        <%= link_to t('defaults.my_page'), user_path(current_user), class: "btn btn-info" %>
-        <%= link_to t('defaults.new'), new_bad_event_path, class: "btn btn-info" %>
-        <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "btn btn-primary" %>
+    <%= link_to "Memory Update", root_path, class: "navbar-brand fst-italic fw-bold text-light" %>
+    <div class="collapse navbar-collapse justify-content-end">
+      <div class="navbar-nav">
+        <div class="nav-item nav-link">
+          <%= current_user.name %>
+        </div>
+        <div class="nav-item">
+          <%= link_to "イラスト一覧", "#", class: "btn btn-info" %>
+        </div>
+        <div class="nav-item">
+          <%= link_to t('defaults.my_page'), memories_path, class: "btn btn-info" %>
+        </div>
+        <div class="nav-item">
+          <%= link_to t('defaults.new'), new_bad_event_path, class: "btn btn-info" %>
+        </div>
+        <div class="nav-item">
+          <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "btn btn-primary" %>
+        </div>
       </div>
     </div>
   </nav>

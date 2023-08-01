@@ -1,7 +1,8 @@
-//= require jquery
-//= require toggle
+import "jquery"
 import "@hotwired/turbo-rails"
 import "controllers"
 import "bootstrap"
 import "@popperjs/core"
 import "animejs"
+import "toggle"
+import "book"

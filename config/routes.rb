@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :bad_events, only: %i[new create] do
     get 'image', to: 'images#generate'
   end
-  resources :memories, only: %i[show], shallow: true do
+  resources :memories, only: %i[index show], shallow: true do
     get 'page', on: :member
     resources :good_events, only: %i[new create show edit update]
   end
