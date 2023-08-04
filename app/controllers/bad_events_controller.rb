@@ -1,5 +1,6 @@
 class BadEventsController < ApplicationController
-  before_action :set_bad_event, only: %i[show]
+  before_action :set_bad_event, only: %i[edit update]
+  before_action :has_bad_check, only: %i[create]
   def new
     @bad_event = BadEvent.new
   end
@@ -16,14 +17,16 @@ class BadEventsController < ApplicationController
     end
   end
 
-  def show
-    @memory = @bad_event.memory
-  end
-
   def edit
   end
 
   def update
+    if @bad_event.update(bad_event_params)
+    flash.now[:success] = "更新しました"
+    else
+      flash.now[:danger] = "更新できませんでした"
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -32,10 +35,18 @@ class BadEventsController < ApplicationController
   private
 
   def set_bad_event
-    @bad_event = BadEvent.find(params[:id])
+    @memory = Memory.find(params[:id])
+    @bad_event = @memory.bad_event
   end
 
   def bad_event_params
     params.require(:bad_event).permit(:body)
+  end
+
+  def has_bad_check
+    if current_user.memories.bad.exists?
+      memory = current_user.memories.bad.first
+      redirect_to memory_path(memory), warning: "入力途中のエピソードがあります"
+    end
   end
 end

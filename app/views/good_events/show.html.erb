@@ -1,22 +1,30 @@
-<div class="col-6 bg-white border border-dark pt-2 mt-3 offset-1">
-  <div class="text-end">
-    <%= GoodEvent.human_attribute_name("date") %>
-    <%= l @good_event.date, format: :short %>
-  </div>
-  <div class="h2 text-center">
-    <%= @good_event.title %>
-  </div>
+<div class="container">
   <div class="row">
-    <div class="col">
-      <%= GoodEvent.human_attribute_name("body") %>
-    </div>
-    <div class="col text-end">
-      <%= link_to t('defaults.edit'), edit_good_event_path, class: "btn-edit"%>
-    </div>
-  </div>
-  <div class="col-10 border border-dark mt-4 mx-auto h-50">
-    <div class="p-1">
-      <%= nl2br(@good_event.body) %>
+    <div class="col-12">
+      <div class="row justify-content-center">
+        <div class="col-6 border border-dark pt-2 mt-3">
+          <div class="text-end me-1">
+            <%= GoodEvent.human_attribute_name("date") %>
+            <%= l @good_event.date, format: :short %>
+          </div>
+          <div class="h2 text-center">
+            <%= @good_event.title %>
+          </div>
+          <div class="row mx-1">
+            <div class="col">
+              <%= GoodEvent.human_attribute_name("body") %>
+            </div>
+            <div class="col text-end">
+              <%= link_to t('defaults.edit'), edit_good_event_path %>
+            </div>
+          </div>
+          <div class="col-10 mx-auto">
+            <div class="p-1 border border-dark my-4 event-content">
+              <%= nl2br(@good_event.body) %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

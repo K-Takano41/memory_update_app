@@ -2,24 +2,11 @@
   transition: opacity 0.4s 0.2s;
 }
 
-// .page {
-//   width: 36vw;
-//   height: 27vw;
-//   background-color: #fff;
-//   float: left;
-//   margin-bottom: 0.5em;
-
-//   &:nth-child(even) {
-//     clear: both;
-//   }
-// }
-
 .bound {
-  // perspective: 250vw;
 
   .pages {
-    width: 72vw;
-    height: 40vw;
+    width: 72.6vw;
+    height: 50vw;
     position: relative;
     transform: rotateX(12deg);
     transform-style: preserve-3d;
@@ -40,7 +27,7 @@
     transition: transform 1.4s;
     backface-visibility: hidden;
     transform-style: preserve-3d;
-    cursor: pointer;
+    // cursor: pointer;
     user-select: none;
     background-color: white;
     border: 1px solid black;
@@ -55,18 +42,19 @@
       background: rgba(0, 0, 0, 0);
       transition: background(0.7s);
       z-index: 2;
+      pointer-events: none;
     }
 
 
     &:nth-child(odd) {
-      pointer-events: none;
+      // pointer-events: none;
       transform: rotateY(180deg);
       left: 0;
       border-radius: 4px 0 0 4px;
     }
 
     &:nth-child(even){
-      pointer-events: all;
+      // pointer-events: all;
       transform-origin: 0 0;
       transform: rotateY(0deg);
       right: 0;
@@ -84,14 +72,9 @@
       }
     }
 
-    &:first-child{
-      pointer-events: none;
+    &:first-child, &:last-child{
       transform: none;
-    }
-
-    &:last-child{
-      pointer-events: none;
-      transform: none;
+      // pointer-events: none;
     }
   }
 }
@@ -100,11 +83,10 @@
   background-size: cover;
   &:nth-child(even){
     background-position: right top;
-    background-image: image-url("book_right.jpg");
   }
 
   
-  &:nth-child(odd){
-    background-image: image-url("book_left.jpg");
+  &:nth-child(odd), &:nth-child(even){
+    background-image: image-url("book.jpg");
   }
 }

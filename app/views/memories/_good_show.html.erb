@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="row mt-2">
+        <div class="col-8">
+          <div class="text-end">
+            <%= image_tag memory.good_image, size: '400x500' %>
+          </div>
+        </div>
+        <div class="col-4 my-auto">
+          <div class="mt-2 p-2">
+            <% memory.good_events.each do |event| %>
+              <ul>
+                <li>
+                  <%= link_to event.title, good_event_path(event), class:"text-black"%>
+                </li>
+              </ul>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

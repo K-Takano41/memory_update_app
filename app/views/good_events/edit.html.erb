@@ -1,6 +1,16 @@
-<div class="col-6 offset-1">
-  <h2 class="text-center mt-2"><%= t('defaults.edit') %></h2>
-  <div class="bg-white border border-dark pt-2 mt-2">
-    <%= render partial: "form", locals: { memory: @memory, good_event: @good_event} %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <h2 class="text-center mt-2">
+            <%= t('defaults.edit') %>
+          </h2>
+          <div class="border border-dark pt-2 mt-2">
+            <%= render partial: "form", locals: { memory: @memory, good_event: @good_event} %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

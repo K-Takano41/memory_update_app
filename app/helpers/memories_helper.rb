@@ -6,7 +6,7 @@ module MemoriesHelper
         content_tag(:i, "", class: "fa-solid fa-face-laugh-beam fa-size mx-1")
       end
     else
-      content_tag(:i, "", class: "fa-regular fa-face-laugh-beam fa-size mx-1")
+      content_tag(:i, "", class: "fa-regular fa-face-meh fa-size mx-1")
     end
   end
 end
