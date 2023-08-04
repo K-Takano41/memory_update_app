@@ -1,0 +1,35 @@
+$desktop: 1920px;
+$note: 1280px;
+$tab: 768px;
+
+@mixin desktop {
+  @media (max-width: ($desktop)){
+    @content;
+  }
+}
+
+@mixin note {
+  @media (max-width: ($note)){
+    @content;
+  }
+}
+
+@mixin tab {
+  @media (max-width: ($tab)){
+    @content;
+  }
+}
+
+.container {
+  @include desktop {
+    background-color: red;
+  }
+
+  @include note {
+    background-color: blue;
+  }
+
+  @include tab {
+    background-color: yellow;
+  }
+}

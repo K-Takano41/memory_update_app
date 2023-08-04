@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="row justify-content-center">
+        <div class="col-10 col-xxl-12 mt-2">
+          <p>画像をクリックしてエピソードの詳細へ</p>
+          <div class="book bound ">
+            <div class="pages">
+              <% if @memories.present? %>
+                <%= render partial: "user_memory", collection: @memories, as: :memory %>
+              <% else %>
+                <div class="page"></div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

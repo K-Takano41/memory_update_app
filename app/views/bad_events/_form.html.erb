@@ -1,0 +1,11 @@
+<%= turbo_frame_tag bad_event do %>
+  <%= bootstrap_form_with(model: bad_event) do |form| %>
+    <div class="col-10 mx-auto my-4">
+      <%= form.text_area :body, skip_label: true, rows: "5" %>
+    </div>
+    <div class="text-center mb-3">
+      <%= form.primary %>
+      <%= link_to "キャンセル", bad_event.memory, class: "btn btn-sm btn-outline-secondary" %>
+    </div>
+  <% end %>
+<% end %>

@@ -1,29 +1,13 @@
-body {
-  background-color: #F8F9E6;
+.container {
+  padding: 0;
+
+  & .row {
+    margin: 0;
+  }
 }
 
 header {
   background-color: #0B9B08;
-}
-
-.sidebar {
-  background-color: #00ff7f;
-  height: 500px;
-}
-
-menu {
-  li {
-    list-style-type: none;
-  }
-  a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-  
-    &:hover{
-      color: #ff0080;
-    }
-  }
 }
 
 .rounded-pill {
@@ -34,7 +18,7 @@ menu {
   font-size: 3em;
 }
 
-#toggle-button, .btn-edit{
+#toggle-button {
   text-decoration: none;
   color: black;
 }
@@ -60,4 +44,20 @@ menu {
 
 .fa-solid.fa-face-laugh-beam {
   color: #ffdd00;
+}
+
+.event-content{
+  height: 300px;
+}
+
+.index-container {
+  min-height: 100vh;
+  background-image: image-url("wall.jpg");
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.bad-image {
+  width: 450px;
+  height: 300px;
 }

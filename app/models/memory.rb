@@ -3,5 +3,6 @@ class Memory < ApplicationRecord
   has_one :bad_event, dependent: :destroy
   has_many :good_events, dependent: :destroy
 
-  enum page: { before: 0, after: 1 }
+  enum page: { bad: 0, good: 1 }
+
 end

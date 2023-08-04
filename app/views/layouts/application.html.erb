@@ -7,16 +7,15 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= yield(:head) %>
   </head>
 
   <body>
+    <%= turbo_stream_flash %>
     <% if logged_in? %>
       <%= render "shared/header" %>
     <% else %>
       <%= render "shared/before_login_header" %>
     <% end %>
-    <%= turbo_stream_flash %>
     <%= yield %>
     <div id="flashes" class="position-fixed top-0 end-0 m-2"></div>
   </body>

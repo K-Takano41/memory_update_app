@@ -13,11 +13,12 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
   resources :users, only: %i[new create show]
-  resources :bad_events, only: %i[new create] do
+  resources :bad_events, only: %i[new create edit update] do
     get 'image', to: 'images#generate'
   end
   resources :memories, only: %i[index show], shallow: true do
-    get 'page', on: :member
+    get 'page_change', on: :member
+    get 'user_memories', on: :collection
     resources :good_events, only: %i[new create show edit update]
   end
 end

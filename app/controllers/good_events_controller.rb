@@ -1,6 +1,6 @@
 class GoodEventsController < ApplicationController
-  layout 'sidebar_layout'
-  before_action :set_good_event, only: %i[show edit update]
+  before_action :set_good_event, only: %i[show edit update owner_only]
+  before_action :owner_only, only: %i[show edit]
   def new
     @good_event = GoodEvent.new
     @memory = Memory.find(params[:memory_id])
@@ -43,5 +43,11 @@ class GoodEventsController < ApplicationController
 
   def set_good_event
     @good_event = GoodEvent.find(params[:id])
+  end
+
+  def owner_only
+    unless @good_event.memory.user == current_user
+      redirect_to user_memories_memories_path, warning: t('defaults.not_view')
+    end
   end
 end
