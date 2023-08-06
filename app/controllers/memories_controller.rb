@@ -21,7 +21,7 @@ class MemoriesController < ApplicationController
   def page_change
     if @memory.bad? && @memory.good_events.count == 5 # 削除を想定してないのでifは本来不要
       @memory.good!
-      # 画像合成
+      image_composite(@memory)
       redirect_to memory_path
     end
   end
