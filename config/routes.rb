@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :prompts
   end
-  if Rails.env.development?
-    require "sidekiq/web"
-    mount Sidekiq::Web => "/sidekiq"
-  end
+  require "sidekiq/web"
+  mount Sidekiq::Web => "/sidekiq"
+  # if Rails.env.development?
+  #   require "sidekiq/web"
+  #   mount Sidekiq::Web => "/sidekiq"
+  # end
   root to: 'top#top'
   get 'auth/:provider/callback', to: 'twitter_sessions#create'
   get 'auth/failure', to: 'twitter_sessions#failure'

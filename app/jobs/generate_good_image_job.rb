@@ -1,10 +1,8 @@
 class GenerateGoodImageJob < ApplicationJob
   queue_as :default
 
-  def perform(memory_id, prompt_id)
-    memory = Memory.find(memory_id)
-    prompt = Prompt.find(prompt_id)
-    memory.good_image = "image.jpeg"
-    memory.save
+  def perform(memory, prompt)
+    prompt_text = prompt.good_prompt
+    ImageApiMethod.create_image(memory, prompt_text, "good_image")
   end
 end
