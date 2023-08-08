@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to login_path, warning: t('defaults.login_message')
+    redirect_to login_path, warning: t('defaults.message.login_message')
   end
 end

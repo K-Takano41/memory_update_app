@@ -5,14 +5,14 @@ class TwitterSessionsController < ApplicationController
     if User.exists?(email: @user.email)
       reset_session
       auto_login(@user)
-      redirect_to root_path, success: t('defaults.login_success')
+      redirect_to root_path, success: t('defaults.message.login_success')
     else
-      redirect_to new_user_path, danger: t('defaults.login_failure')
+      redirect_to new_user_path, danger: t('defaults.message.login_failure')
     end
   end
 
   def failure
-    redirect_to root_path, danger: t('defaults.login_failure')
+    redirect_to root_path, danger: t('defaults.message.login_failure')
   end
 
   private

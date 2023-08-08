@@ -1,0 +1,25 @@
+<div class="d-flex flex-column flex-shrink-0 py-3 px-3 bg-dark text-white vh-100">
+  <div class="d-flex align-items-center justify-content-center py-2">
+    <%= link_to admin_path do %>
+      <h3><%= t('admin.title') %></h3>
+    <% end %>
+  </div>
+
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item m-2">
+      <%= current_user.name %>
+    </li>
+    <li class="nav-item m-2">
+      <%= link_to Prompt.model_name.human, admin_prompts_path %>
+    </li>
+    <li class="nav-item m-2">
+      <%= link_to User.model_name.human, admin_users_path %>
+    </li>
+    <li class="nav-item m-2">
+      <%= link_to Memory.model_name.human, admin_memories_path %>
+    </li>
+    <li class="nav-item m-2">
+      <%= link_to t('defaults.logout'), admin_logout_path, data: { turbo_method: :delete } %>
+    </li>
+  </ul>
+</div>

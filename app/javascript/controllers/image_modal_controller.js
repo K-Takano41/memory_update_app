@@ -28,7 +28,7 @@ export default class extends Controller {
           complete: function() {
             setTimeout(() => {
               const url = window.location.href;
-              window.location.href = url + '/page_change';
+              window.location.href = url + '/status_change';
             }, 2000);
           }
         });

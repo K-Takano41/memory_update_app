@@ -1,0 +1,27 @@
+<div class="card shadow mt-3">
+  <div class="card-header">
+    <%= t('defaults.index') %>
+  </div>
+
+  <div class="card-body mx-3">
+    <div class="row py-2">
+      <div class="col-1 mt-auto">
+        <%= Memory.human_attribute_name(:id) %>
+      </div>
+      <div class="col-3 mt-auto">
+        <%= Memory.human_attribute_name(:name) %>
+      </div>
+      <div class="col-3 mt-auto">
+        <%= Memory.human_attribute_name(:status) %>
+      </div>
+      <div class="col-3 mt-auto">
+        <%= Memory.human_attribute_name(:created_at) %>
+      </div>
+    </div>
+
+    <%= render @memories %>
+    <div class="d-flex justify-content-end mt-3">
+      <%= paginate @memories, theme: 'bootstrap-5' %>
+    </div>
+  </div>
+</div>

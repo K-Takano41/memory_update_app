@@ -4,18 +4,34 @@ ja:
       user: 'ユーザー'
       bad_event: '嫌な出来事'
       good_event: '良かった出来事'
+      memory: 'メモリー'
+      prompt: 'プロンプト'
     attributes:
       user:
+        id: 'id'
         name: '名前'
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード(確認)'
+        role: '権限'
+      memory:
+        id: 'id'
+        name: '作成者'
+        status: '状態'
+        created_at: '作成日時'
       bad_event:
+        id: 'id'
         body: 'エピソード'
       good_event:
+        id: 'id'
         title: 'タイトル'
         body: 'エピソード'
         date: '日付'
+      prompt:
+        id: 'id'
+        question: '質問'
+        bad_prompt: 'バッドプロンプト'
+        good_prompt: 'グッドプロンプト'
     
   enums:
     user:

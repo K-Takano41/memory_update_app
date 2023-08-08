@@ -7,7 +7,7 @@ class Memory < ApplicationRecord
   has_one :bad_event, dependent: :destroy
   has_many :good_events, dependent: :destroy
 
-  enum page: { bad: 0, good: 1 }
+  enum status: { bad: 0, good: 1 }
 
   def image_composite(memory)
     image_path = Rails.root.join("public#{memory.good_image.url}")

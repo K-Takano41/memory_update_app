@@ -8,13 +8,13 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_to root_path, success: t('defaults.login_success')
     else
-      flash.now[:danger] = t('defaults.login_failure')
+      flash.now[:danger] = t('defaults.message.login_failure')
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, success: t('defaults.logout_success'), status: :see_other
+    redirect_to root_path, success: t('defaults.message.logout_success'), status: :see_other
   end
 end

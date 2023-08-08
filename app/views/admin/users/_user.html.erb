@@ -1,0 +1,20 @@
+<div class="row py-2 border-top">
+  <div class="col-1 my-auto">
+    <%= user.id %>
+  </div>
+  <div class="col-3 my-auto">
+    <%= user.name %>
+  </div>
+  <div class="col-3 my-auto">
+    <%= user.email %>
+  </div>
+  <div class="col-3 my-auto">
+    <%= user.role_i18n %>
+  </div>
+  <div class="col-2">
+    <div class="d-flex justify-content-end">
+      <%= link_to t('defaults.show'), admin_user_path(user), class: "btn btn-sm btn-outline-primary me-2" %>
+      <%= link_to t('defaults.delete'), admin_user_path(user), class: "btn btn-sm btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_message') }  %>
+    </div>
+  </div>
+</div>

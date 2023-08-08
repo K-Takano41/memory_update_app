@@ -1,0 +1,45 @@
+<div class="card shadow mt-3">
+  <div class="card-header">
+    <%= t('defaults.show') %>
+  </div>
+  <div class="card-body mx-3">
+    <div>
+      <div class="row">
+        <div class="mb-3 col-6 text-center my-auto">
+          <% if @memory.bad_image.present? %>
+            <%= image_tag @memory.bad_image.url, size: "250x250" %>
+          <% end %>
+          <div>
+            <%= Memory.human_attribute_name(:bad_image)%>
+          </div>
+        </div>
+        <div class="mb-3 col-6 text-center my-auto">
+          <% if @memory.good_image.present? %>
+            <%= image_tag @memory.good_image.url, size: "250x300" %>
+          <% end %>
+          <div>
+            <%= Memory.human_attribute_name(:good_image) %>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div>
+          <%= BadEvent.model_name.human %>
+        </div>
+        <div class="border rounded p-1">
+          <%= @memory.bad_event.body %>
+        </div>
+        <%= link_to t('defaults.edit'), edit_admin_bad_event_path(@memory.bad_event), class: "btn btn-primary" %>
+      </div>
+      <div class="mb-3">
+        <div>
+          <%= GoodEvent.model_name.human %>
+        </div>
+        <div class="border rounded p-1">
+          <%= render partial: "good_event", collection: @memory.good_events %>
+        </div>
+      </div>
+      <%= link_to t('defaults.index'), admin_memories_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
