@@ -1,2 +1,17 @@
-<h1>Admin::Prompts#new</h1>
-<p>Find me in app/views/admin/prompts/new.html.erb</p>
+<div class="card shadow mt-3">
+  <div class="card-header">
+    <%= t('defaults.register') %>
+  </div>
+  <div class="card-body mx-3">
+    <div>
+      <%= bootstrap_form_with(model: @prompt, url: admin_prompts_path, local: true) do |form| %>
+        <%= render 'shared/admin_error', object: form.object %>
+        <%= form.text_field :question %>
+        <%= form.text_field :bad_prompt %>
+        <%= form.text_field :good_prompt %>
+        <%= form.primary %>
+        <%= link_to t('defaults.back'), admin_prompts_path %>
+      <% end %>
+    </div>
+  </div>
+</div>

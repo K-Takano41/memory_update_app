@@ -24,17 +24,4 @@ $(window).on('turbo:load load', function(){
     }
   });
 
-
-  // $('.page:not(:first, :last)').on('click', function() {
-  //   var page = $(this);
-  //   var page_num = pages.index(page);
-  //   if (page_num % 2 === 0) {
-  //     page.removeClass('flipped');
-  //     page.prev().removeClass('flipped');
-  //   } else {
-  //     page.addClass('flipped');
-  //     page.next().addClass('flipped');
-  //   }
-  // });
-
 })

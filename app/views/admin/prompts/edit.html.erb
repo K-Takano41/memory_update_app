@@ -1,2 +1,17 @@
-<h1>Admin::Prompts#edit</h1>
-<p>Find me in app/views/admin/prompts/edit.html.erb</p>
+<div class="card shadow mt-3">
+  <div class="card-header">
+    <%= t('defaults.edit') %>
+  </div>
+  <div class="card-body mx-3">
+    <div>
+      <%= bootstrap_form_with(model: @prompt, url: admin_prompt_path(@prompt), local: true) do |form| %>
+        <%= render 'shared/admin_error', object: form.object %>
+        <%= form.text_field :question %>
+        <%= form.text_field :bad_prompt %>
+        <%= form.text_field :good_prompt %>
+        <%= form.primary %>
+        <%= link_to t('defaults.back'), admin_prompt_path(@prompt), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -9,10 +9,9 @@ class BadEventsController < ApplicationController
     @memory = current_user.memories.build
     @bad_event = @memory.build_bad_event(bad_event_params)
     if @memory.save
-      flash.now[:success] = t('defaults.event_success')
-      # render turbo_stream: turbo_stream.replace('modal', partial: "shared/modal")
+      flash.now[:success] = t('defaults.message.created', item: BadEvent.human_attribute_name(:body))
     else
-      flash.now[:danger] = t('defaults.event_danger')
+      flash.now[:danger] = t('defaults.message.failure', item: BadEvent.human_attribute_name(:body))
       render turbo_stream: turbo_stream.append('flashes', partial: "shared/flash_message"), status: :unprocessable_entity
     end
   end
@@ -22,9 +21,9 @@ class BadEventsController < ApplicationController
 
   def update
     if @bad_event.update(bad_event_params)
-    flash.now[:success] = "更新しました"
+    flash.now[:success] = t('defaults.message.updated', item: BadEvent.human_attribute_name(:body))
     else
-      flash.now[:danger] = "更新できませんでした"
+      flash.now[:danger] = t('defaults.message.not_updated', item: BadEvent.human_attribute_name(:body))
       render :edit, status: :unprocessable_entity
     end
   end
@@ -46,7 +45,7 @@ class BadEventsController < ApplicationController
   def has_bad_check
     if current_user.memories.bad.exists?
       memory = current_user.memories.bad.first
-      redirect_to memory_path(memory), warning: "入力途中のエピソードがあります"
+      redirect_to memory_path(memory), warning: t('defaults.message.wait')
     end
   end
 end

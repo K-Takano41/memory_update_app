@@ -5,17 +5,31 @@ ja:
     success: '成功'
     failure: '失敗'
     warning: '警告'
-    login_success: 'ログインしました'
-    login_failure: 'ログインに失敗しました'
-    logout_success: 'ログアウトしました'
-    auto_login: 'ユーザー登録完了 ログインしました'
     menu: 'メニュー'
+    index: '一覧'
     new: '新規投稿'
     edit: '編集'
-    event_success: 'エピソードを登録しました'
-    event_danger: 'エピソード登録に失敗しました'
-    login_message: 'ログインしてください'
-    not_view: '閲覧できません'
+    back: '戻る'
+    show: '詳細'
+    delete: '削除'
+    register: '登録'
+    message:
+      login_success: 'ログインしました'
+      login_failure: 'ログインに失敗しました'
+      logout_success: 'ログアウトしました'
+      auto_login: 'ユーザー登録完了 ログインしました'
+      created: "%{item}を登録しました"
+      failure: "%{item}の登録に失敗しました"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}の更新に失敗しました"
+      deleted: "%{item}を削除しました"
+      delete_message: '本当に削除しますか？'
+      login_message: 'ログインしてください'
+      not_view: '閲覧できません'
+      wait: '入力途中のエピソードがあります'
+      not_authorized: '権限がありません'
+      date_error: '過去の日付を入力してください'
+      max_count: 'これ以上は登録できません'
   users:
     new:
       title: 'ユーザー登録'
@@ -34,7 +48,5 @@ ja:
   bad_events:
     new:
       title: 'エピソード登録'
-  good_events:
-    update:
-      success: 'エピソードを更新しました'
-      danger: 'エピソードの更新に失敗しました'
+  admin:
+    title: '管理者画面'

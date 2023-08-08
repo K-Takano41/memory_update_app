@@ -1,0 +1,16 @@
+<div class="card shadow mt-3">
+  <div class="card-header">
+    <%= t('defaults.edit') %>
+  </div>
+  <div class="card-body mx-3">
+    <div>
+      <%= bootstrap_form_with(model: @good_event, url: admin_good_event_path(@good_event), local: true) do |form| %>
+        <%= render 'shared/admin_error', object: form.object %>
+        <%= form.text_field :title %>
+        <%= form.text_field :body %>
+        <%= form.primary %>
+        <%= link_to t('defaults.back'), admin_memory_path(@good_event.memory), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

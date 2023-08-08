@@ -1,2 +1,30 @@
-<h1>Admin::Prompts#index</h1>
-<p>Find me in app/views/admin/prompts/index.html.erb</p>
+<div class="card shadow mt-3">
+  <div class="card-header">
+    <%= t('defaults.index') %>
+  </div>
+
+  <div class="card-body mx-3">
+    <div class="row py-2">
+      <div class="col-1 mt-auto">
+        <%= Prompt.human_attribute_name(:id) %>
+      </div>
+      <div class="col-3 mt-auto">
+        <%= Prompt.human_attribute_name(:question) %>
+      </div>
+      <div class="col-3 mt-auto">
+        <%= Prompt.human_attribute_name(:bad_prompt) %>
+      </div>
+      <div class="col-3 mt-auto">
+        <%= Prompt.human_attribute_name(:good_prompt) %>
+      </div>
+      <div class="col-2 d-flex justify-content-end">
+        <%= link_to t('defaults.register'),new_admin_prompt_path, class: "btn btn-outline-primary" %>
+      </div>
+    </div>
+    
+    <%= render @prompts %>
+    <div class="d-flex justify-content-end mt-3">
+      <%= paginate @prompts, theme: 'bootstrap-5' %>
+    </div>
+  </div>
+</div>
