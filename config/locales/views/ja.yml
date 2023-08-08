@@ -6,27 +6,18 @@ ja:
     failure: '失敗'
     warning: '警告'
     menu: 'メニュー'
-    index: '一覧'
     new: '新規投稿'
     edit: '編集'
     back: '戻る'
-    show: '詳細'
-    delete: '削除'
-    register: '登録'
+    password_reset: 'パスワードリセット'
     message:
-      login_success: 'ログインしました'
-      login_failure: 'ログインに失敗しました'
-      logout_success: 'ログアウトしました'
-      auto_login: 'ユーザー登録完了 ログインしました'
       created: "%{item}を登録しました"
       failure: "%{item}の登録に失敗しました"
       updated: "%{item}を更新しました"
       not_updated: "%{item}の更新に失敗しました"
       deleted: "%{item}を削除しました"
-      delete_message: '本当に削除しますか？'
       login_message: 'ログインしてください'
       not_view: '閲覧できません'
-      wait: '入力途中のエピソードがあります'
       not_authorized: '権限がありません'
       date_error: '過去の日付を入力してください'
       max_count: 'これ以上は登録できません'
@@ -35,18 +26,73 @@ ja:
       title: 'ユーザー登録'
       password_html: '8文字以上・アルファベット大文字・小文字・数字・記号'
     create:
+      success: 'ユーザー登録完了 ログインしました'
       danger: 'ユーザー登録に失敗しました'
   user_sessions:
     new:
       title: 'ログイン'
+      password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      success: 'ログインしました'
+      danger: 'ログインできませんでした'
+    destroy:
+      success: 'ログアウトしました'
+  twitter_sessions:
+    create:
+      success: 'ログインしました'
+      danger: 'ログインできませんでした'
+    failure:
+      danger: 'ログインできませんでした'
+  profiles:
+    show:
+      title: 'プロフィール情報'
   memories:
     index:
       title: 'イラスト一覧'
     show:
+      title: 'マイイラスト一覧'
       event_show: '投稿したエピソードを見る'
       new_good_event: '良かった出来事を投稿する'
   bad_events:
     new:
       title: 'エピソード登録'
+    message:
+      create_wait: '入力途中のエピソードがあります'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+      submit: '送信'
+    create:
+      success: 'パスワードリセット用のメールを送信しました'
+    edit:
+      title: 'パスワードリセット'
+      password_html: '8文字以上・アルファベット大文字・小文字・数字・記号'
+    update:
+      success: 'パスワードを変更しました'
+      danger: 'パスワードの変更に失敗しました'
   admin:
-    title: '管理者画面'
+    defaults:
+      title: '管理者画面'
+      index: '一覧'
+      show: '詳細'
+      edit: '編集'
+      back: '戻る'
+      delete: '削除'
+      register: '登録'
+      login: 'ログイン'
+      logout: 'ログアウト'
+      message:
+        delete_confirmation: '本当に削除しますか？'
+    user:
+      new:
+        password_html: '8文字以上・アルファベット大文字・小文字・数字・記号'
+      create:
+        success: 'ユーザー登録を完了しました'
+        danger: 'ユーザー登録に失敗しました'
+    user_sessions:
+      create:
+        success: 'ログインしました'
+        danger: 'ログインできませんでした'
+      destroy:
+        success: 'ログアウトしました'
+
