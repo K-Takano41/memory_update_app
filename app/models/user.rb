@@ -6,10 +6,12 @@ class User < ApplicationRecord
   has_many :good_events, through: :memories
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)(?=.*?[\W_])[!-~]{8,}+\z/
-  validates :password, format: { with: VALID_PASSWORD_REGEX }, if: -> { new_record? || changes[:crypted_password] }
-  validates :password, length: { minimum: 8}, if: -> { new_record? || changes[:crypted_password] }
-  validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
-  validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
+  validates :password, format: { with: VALID_PASSWORD_REGEX }, if: -> { new_record? || changes[:crypted_password] || changes[:reset_password_token] }
+  validates :password, length: { minimum: 8}, if: -> { new_record? || changes[:crypted_password] || changes[:reset_password_token] }
+  validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] || changes[:reset_password_token] }
+  validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] || changes[:reset_password_token] }
+
+  validates :reset_password_token, uniqueness: true, allow_nil: true
 
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true

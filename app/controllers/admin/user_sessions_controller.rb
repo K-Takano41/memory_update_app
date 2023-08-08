@@ -8,15 +8,15 @@ class Admin::UserSessionsController < Admin::BaseController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_to admin_path, success: t('defaults.message.login_success')
+      redirect_to admin_path, success: t('admin.user_sessions.create.success')
     else
-      flash.now[:danger] = t('defaults.message.login_failure')
+      flash.now[:danger] = t('admin.user_sessions.create.danger')
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     logout
-    redirect_to admin_login_path, success: t('defaults.message.logout_success')
+    redirect_to admin_login_path, success: t('admin.user_sessions.destroy.success')
   end
 end

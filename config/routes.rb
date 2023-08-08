@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   namespace :admin do
     get '/', to: 'dashboards#index'
     get 'login', to: "user_sessions#new"
@@ -22,7 +23,9 @@ Rails.application.routes.draw do
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
-  resources :users, only: %i[new create show]
+  resources :users, only: %i[new create]
+  resources :password_resets, only: %i[new create edit update]
+  resource :profiles, only: %i[show edit update]
   resources :bad_events, only: %i[new create edit update] do
     get 'image', to: 'images#generate'
   end

@@ -5,7 +5,6 @@ class MemoriesController < ApplicationController
   
   def index
     @memories = Memory.good.page(params[:page])
-    render layout: "application"
   end
   
   def user_memories

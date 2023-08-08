@@ -1,7 +1,7 @@
 <div class="d-flex flex-column flex-shrink-0 py-3 px-3 bg-dark text-white vh-100">
   <div class="d-flex align-items-center justify-content-center py-2">
     <%= link_to admin_path do %>
-      <h3><%= t('admin.title') %></h3>
+      <h3><%= t('admin.defaults.title') %></h3>
     <% end %>
   </div>
 
@@ -19,7 +19,7 @@
       <%= link_to Memory.model_name.human, admin_memories_path %>
     </li>
     <li class="nav-item m-2">
-      <%= link_to t('defaults.logout'), admin_logout_path, data: { turbo_method: :delete } %>
+      <%= link_to t('admin.defaults.logout'), admin_logout_path, data: { turbo_method: :delete } %>
     </li>
   </ul>
 </div>

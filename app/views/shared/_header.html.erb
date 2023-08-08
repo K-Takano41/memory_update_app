@@ -7,7 +7,7 @@
           <%= current_user.name %>
         </div>
         <div class="nav-item">
-          <%= link_to "イラスト一覧", memories_path, class: "btn btn-info" %>
+          <%= link_to t('memories.index.title'), memories_path, class: "btn btn-info" %>
         </div>
         <div class="nav-item">
           <%= link_to t('defaults.new'), new_bad_event_path, class: "btn btn-info" %>
@@ -16,11 +16,11 @@
           <div class="dropdown">
             <%= button_tag t('defaults.menu'), class: "btn btn-info dropdown-toggle", type: 'button', 'data-bs-toggle': 'dropdown', 'aria-expanded': 'false' %>
             <div class="dropdown-menu dropdown-menu-end">
-              <%= link_to "マイイラスト一覧", user_memories_memories_path, class: "dropdown-item" %>
+              <%= link_to t('memories.show.title'), user_memories_memories_path, class: "dropdown-item" %>
               <% if current_user.memories.bad.exists? %>
-                <%= link_to "エピソード", memory_path(current_user.memories.bad.first), class: "dropdown-item" %>
+                <%= link_to BadEvent.human_attribute_name(:body), memory_path(current_user.memories.bad.first), class: "dropdown-item" %>
               <% end %>
-              <%= link_to "アカウント情報", "#", class: "dropdown-item" %>
+              <%= link_to t('profiles.show.title'), profiles_path, class: "dropdown-item" %>
               <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "btn btn-primary dropdown-item" %>
             </div>
           </div>

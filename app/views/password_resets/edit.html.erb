@@ -1,0 +1,14 @@
+<div class="container pt-3">
+  <div class="row justify-content-center">
+    <h2 class="text-center"><%= t('.title') %></h2>
+    <div class="col-8 bg-white pt-3">
+      <div class="col-8 mx-auto">
+        <%= bootstrap_form_with(model: @user, url: password_reset_path(@token), local: true) do |form| %>
+          <%= form.password_field :password, label: User.human_attribute_name(:password), help: t('.password_html') %>
+          <%= form.password_field :password_confirmation, label: User.human_attribute_name(:password_confirmation) %>
+          <%= form.primary %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

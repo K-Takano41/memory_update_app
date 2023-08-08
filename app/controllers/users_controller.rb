@@ -8,23 +8,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to root_path, success: t('defaults.message.auto_login')
+      redirect_to root_path, success: t('.success')
     else
-      flash.now[:danger] = t('defaults.message.failure', item: User.model_name.human)
+      flash.now[:danger] = t('.danger')
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def update
-  end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def destroy
   end
 
   private
@@ -32,4 +20,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :role)
   end
+
 end

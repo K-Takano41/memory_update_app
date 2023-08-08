@@ -1,0 +1,15 @@
+<div class="container pt-3">
+  <div class="row justify-content-center">
+    <h2 class="text-center"><%= t('.title') %></h2>
+    <div class="col-8 bg-white pt-3">
+      <div class="col-8 mx-auto">
+        <%= bootstrap_form_with(url: password_resets_path, local: true) do |form| %>
+          <%= form.email_field :email, label: User.human_attribute_name(:email) %>
+          <div class="text-center">
+            <%= form.primary t('.submit') %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
