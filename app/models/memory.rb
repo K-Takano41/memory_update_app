@@ -9,8 +9,8 @@ class Memory < ApplicationRecord
 
   enum status: { bad: 0, good: 1 }
 
-  def image_composite(memory)
-    image_path = Rails.root.join("public#{memory.good_image.url}")
+  def image_composite
+    image_path = Rails.root.join("public#{good_image.url}")
     image = MiniMagick::Image.open(image_path)
     image.resize "1050x1050"
     frame_path = Rails.root.join("app/assets/images/frame.png")

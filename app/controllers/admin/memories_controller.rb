@@ -1,5 +1,5 @@
 class Admin::MemoriesController < Admin::BaseController
-  before_action :set_memory, only: %[show destroy]
+  before_action :set_memory, only: %i[show destroy]
   def index
     @memories = Memory.all.includes(:user).page(params[:page])
   end
@@ -14,6 +14,7 @@ class Admin::MemoriesController < Admin::BaseController
   end
 
   private
+
   def set_memory
     @memory = Memory.find(params[:id])
   end

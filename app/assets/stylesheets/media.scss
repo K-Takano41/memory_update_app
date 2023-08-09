@@ -1,35 +1,77 @@
-$desktop: 1920px;
-$note: 1280px;
-$tab: 768px;
+$desktop: 1200px;
+$note: 960px;
 
-@mixin desktop {
-  @media (max-width: ($desktop)){
-    @content;
+@media (min-width: ($desktop)){
+  .show-bad-image  {
+    width: 400px;
+    height: 400px;
+  }
+
+  .show-good-image {
+    width: 400px; 
+    height: 500px;
+  }
+
+  .index-card-img {
+    width: 250px;
+    height: 350px;
+  }
+
+  .pages {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page-bad-img{
+    width: 100px;
+    height: 100px;
+  }
+
+  .arrow-img {
+    width: 100px;
+    height: 50px;
+  }
+
+  .page-good-img{
+    width: 300px;
+    height: 400px;
   }
 }
 
-@mixin note {
-  @media (max-width: ($note)){
-    @content;
-  }
-}
 
-@mixin tab {
-  @media (max-width: ($tab)){
-    @content;
-  }
-}
-
-.container {
-  @include desktop {
-    background-color: red;
+@media (min-width: ($note)){
+  .show-bad-image  {
+    width: 400px;
+    height: 400px;
   }
 
-  @include note {
-    background-color: blue;
+  .show-good-image {
+    width: 400px; 
+    height: 500px;
   }
 
-  @include tab {
-    background-color: yellow;
+  .index-card-img {
+    width: 250px;
+    height: 350px;
+  }
+
+  .pages {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page-bad-img{
+    width: 100px;
+    height: 100px;
+  }
+
+  .arrow-img {
+    width: 100px;
+    height: 50px;
+  }
+
+  .page-good-img{
+    width: 300px;
+    height: 400px;
   }
 }

@@ -1,14 +1,14 @@
 <div class="container pt-3">
   <div class="row justify-content-center">
     <h2 class="text-center"><%= t('.title') %></h2>
-    <div class="col-8 bg-white pt-3">
-      <div class="col-8 mx-auto mt-2">
+    <div class="col-10 col-lg-6 bg-white pt-3">
+      <div class="col-10 col-lg-6 mx-auto mt-2">
         <%= bootstrap_form_with(model: @user, url: profiles_path, local: true) do |form| %>
           <%= form.text_field :name %>
           <%= form.email_field :email %>
           <div class="text-center">
             <%= form.primary %>
-            <%= link_to t('defaults.back'), profiles_path, class: "btn btn-primary" %>
+            <%= link_to t('defaults.back'), 'javascript:history.back()', class: "btn btn-primary" %>
           </div>
         <% end %>
       </div>

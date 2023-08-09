@@ -1,23 +1,17 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="row mt-2">
-        <div class="col-8">
-          <div class="text-end">
-            <%= image_tag memory.good_image.url, size: '400x500' %>
-          </div>
-        </div>
-        <div class="col-4 my-auto">
-          <div class="mt-2 p-2">
+  <div class="row mx-0 justify-content-center">
+    <div class="col-12 col-lg-6 mt-2">
+      <div class="text-center">
+        <%= image_tag memory.good_image.url, class: "show-good_image",size: '300x400' %>
+      </div>
+      <div class="mt-2 p-2">
+        <ul>
             <% memory.good_events.each do |event| %>
-              <ul>
-                <li>
-                  <%= link_to event.title, good_event_path(event), class:"text-black"%>
-                </li>
-              </ul>
-            <% end %>
-          </div>
-        </div>
+            <li class="my-2">
+              <%= link_to event.title, good_event_path(event), class: "text-black"%>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>

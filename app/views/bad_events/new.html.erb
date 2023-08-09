@@ -1,13 +1,9 @@
-<% if @bad_event.errors.present? %>
-  <%= render partial: "shared/error_messages", locals: { object: @bad_event } %>
-<% else %>
-  <%= turbo_frame_tag "modal" %>
-<% end %>
+<%= turbo_frame_tag "modal" %>
 <div class="container">
   <div class="row">
     <div class="col-12">
       <div class="row justify-content-center">
-        <div class="col-6 bg-white border border-dark pt-3 mt-5">
+        <div class="col-10 col-lg-6 bg-white border border-dark pt-3 mt-5">
           <h2 class="text-center mt-2"><%= t('.title') %></h2>
           <%= bootstrap_form_with(model: @bad_event, data: { turbo_frame: "modal"}) do |form| %>
             <div class="col-10 mx-auto my-4">

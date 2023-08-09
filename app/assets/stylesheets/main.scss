@@ -1,11 +1,9 @@
 .container {
   padding: 0;
-  background-color: #F5E1B9;
-
-  & .row {
-    margin: 0;
-  }
+  background-color: yellow;
+  max-width: 100%;
 }
+
 
 header {
   background-color: #0B9B08;
@@ -56,9 +54,4 @@ header {
   background-image: image-url("wall.jpg");
   background-repeat: repeat;
   background-size: contain;
-}
-
-.bad-image {
-  width: 400px;
-  height: 400px;
 }
