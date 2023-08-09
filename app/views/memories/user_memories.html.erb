@@ -1,18 +1,15 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="row justify-content-center">
-        <div class="col-10 col-xxl-12 mt-2">
-          <p>画像をクリックしてエピソードの詳細へ</p>
-          <div class="book bound ">
-            <div class="pages">
-              <% if @memories.present? %>
-                <%= render partial: "user_memory", collection: @memories, as: :memory %>
-              <% else %>
-                <div class="page"></div>
-              <% end %>
-            </div>
-          </div>
+  <div class="row justify-content-center mx-0">
+    <div class="col-10 col-lg-12 mt-2">
+      <h2 class="text-center"><%= t('.title') %></h2>
+      <p class="text-center"><%= t('.message') %></p>
+      <div class="book bound">
+        <div class="pages">
+          <% if @memories.present? %>
+            <%= render partial: "user_memory", collection: @memories, as: :memory %>
+          <% else %>
+            <div class="page"></div>
+          <% end %>
         </div>
       </div>
     </div>

@@ -9,7 +9,10 @@ ja:
     new: '新規投稿'
     edit: '編集'
     back: '戻る'
+    logged_in: 'ログイン中のユーザー'
     password_reset: 'パスワードリセット'
+    next: '次へ'
+    prev: '前へ'
     message:
       created: "%{item}を登録しました"
       failure: "%{item}の登録に失敗しました"
@@ -19,7 +22,6 @@ ja:
       login_message: 'ログインしてください'
       not_view: '閲覧できません'
       not_authorized: '権限がありません'
-      date_error: '過去の日付を入力してください'
       max_count: 'これ以上は登録できません'
   users:
     new:
@@ -46,18 +48,24 @@ ja:
   profiles:
     show:
       title: 'プロフィール情報'
+    edit:
+      title: 'プロフィール編集'
   memories:
     index:
-      title: 'イラスト一覧'
+      to_title: 'イラスト一覧'
+      title: 'みんなのイラスト一覧'
     show:
       title: 'マイイラスト一覧'
       event_show: '投稿したエピソードを見る'
       new_good_event: '良かった出来事を投稿する'
+    user_memories:
+      title: 'あなたのイラスト'
+      message: '画像をクリックしてエピソードの詳細へ'
   bad_events:
     new:
       title: 'エピソード登録'
     message:
-      create_wait: '入力途中のエピソードがあります'
+      create_wait: 'このエピソードがまだ途中です'
   password_resets:
     new:
       title: 'パスワードリセット申請'

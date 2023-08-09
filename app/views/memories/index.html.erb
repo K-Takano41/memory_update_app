@@ -1,14 +1,11 @@
-<div class="container">
-  <div class="row index-container">
-    <div class="col-12">
-      <div class="row">
-        <% if @memories.present? %>
-          <%= render partial: "memory", collection: @memories %>
-        <% else %>
-          <p>なし</p>
-        <% end %>
-      </div>
-      <%= paginate @memories, theme: 'bootstrap-5' %>
-    </div>
+<div class="container index-container">
+  <div class="row mx-0 justify-content-lg-center">
+    <h2 class="text-center"><%= t('.title') %></h2>
+    <% if @memories.present? %>
+      <%= render partial: "memory", collection: @memories %>
+    <% else %>
+      <p>なし</p>
+    <% end %>
   </div>
+  <%= paginate @memories, theme: 'bootstrap-5' %>
 </div>

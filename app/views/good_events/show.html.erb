@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12">
       <div class="row justify-content-center">
-        <div class="col-6 border border-dark pt-2 mt-3">
+        <div class="col-10 col-lg-6 border border-dark pt-2 mt-3">
           <div class="text-end me-1">
             <%= GoodEvent.human_attribute_name(:date) %>
             <%= l @good_event.date, format: :short %>
@@ -15,6 +15,7 @@
               <%= GoodEvent.human_attribute_name(:body) %>
             </div>
             <div class="col text-end">
+              <%= link_to t('defaults.back'), 'javascript:history.back()' %>
               <%= link_to t('defaults.edit'), edit_good_event_path %>
             </div>
           </div>

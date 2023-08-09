@@ -32,7 +32,30 @@ ja:
         question: '質問'
         bad_prompt: 'バッドプロンプト'
         good_prompt: 'グッドプロンプト'
-    
+    errors:
+      models:
+        user:
+          format: "%{message}"
+          blank: '入力してください'
+          attributes:
+            email: 'すでに存在します'
+            password:
+              invalid: '不正な値です'
+              too_short: "%{count}文字以上で入力してください"
+            password_confirmation:
+              confirmation: "%{attribute}の入力が一致しません"
+        bad_event:
+          format: "%{message}"
+          blank: '入力してください'
+        good_event:
+          format: "%{message}"
+          blank: '入力してください'
+          attributes:
+            date:
+              # less_than_or_equal_to: '今日、または過去の日付を入力してください'
+        prompt:
+          format: "%{message}"
+          blank: '入力してください'
   enums:
     user:
       role:

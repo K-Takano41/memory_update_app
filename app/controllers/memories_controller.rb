@@ -4,7 +4,7 @@ class MemoriesController < ApplicationController
   skip_before_action :require_login, only: %i[index]
   
   def index
-    @memories = Memory.good.page(params[:page])
+    @memories = Memory.good.includes(:user).page(params[:page])
   end
   
   def user_memories
@@ -20,7 +20,7 @@ class MemoriesController < ApplicationController
   def status_change
     if @memory.bad? && @memory.good_events.count == 5 # 削除を想定してないのでifは本来不要
       @memory.good!
-      image_composite(@memory)
+      @memory.image_composite
       redirect_to memory_path
     end
   end

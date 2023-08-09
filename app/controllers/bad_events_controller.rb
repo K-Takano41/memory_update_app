@@ -1,6 +1,6 @@
 class BadEventsController < ApplicationController
   before_action :set_bad_event, only: %i[edit update]
-  before_action :has_bad_check, only: %i[create]
+  before_action :has_bad_check, only: %i[new]
 
   def new
     @bad_event = BadEvent.new
@@ -45,8 +45,8 @@ class BadEventsController < ApplicationController
 
   def has_bad_check
     if current_user.memories.bad.exists?
-      memory = current_user.memories.bad.first
-      redirect_to memory_path(memory), warning: t('.message.create_wait')
+      @memory = current_user.memories.bad.first
+      redirect_to memory_path(@memory), warning: t('.message.create_wait')
     end
   end
 end
