@@ -5,10 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+User.create!(
+  name: "admin",
+  email: "admin@example.com",
+  password: "P@ssw0rd",
+  password_confirmation: "P@ssw0rd",
+  role: "admin"
+)
 10.times do |n|
   User.create!(
-    name: "test#{n}",
-    email: "test#{n}@example.com",
+    name: "test#{n + 1}",
+    email: "test#{n + 1}@example.com",
     password: "P@ssw0rd",
     password_confirmation: "P@ssw0rd"
   )
@@ -19,3 +26,4 @@ Prompt.create!(
   good_prompt: "beautiful blue sky, looking up from the water, only sky, photo realistic",
   question: "深い水の底"
 )
+

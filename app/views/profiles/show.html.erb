@@ -1,16 +1,16 @@
 <div class="container pt-3">
   <div class="row justify-content-center">
     <h2 class="text-center"><%= t('.title') %></h2>
-    <div class="col-10 col-lg-6 bg-white pt-3">
+    <div class="col-10 col-lg-6 bg-light py-3 border">
       <div class="col-10 col-lg-6 mx-auto">
         <%= link_to t('defaults.edit'), edit_profiles_path, class: "float-end" %>
         <div class="my-3">
           <%= User.human_attribute_name(:name) %>
-          <p class="border rounded ps-2 py-2 mt-2"><%= current_user.name %></p>
+          <p class="border rounded ps-2 py-2 mt-2 bg-white"><%= current_user.name %></p>
         </div>
         <div class="my-3">
           <%= User.human_attribute_name(:email) %>
-          <p class="border rounded ps-2 py-2 mt-2"><%= current_user.email %></p>
+          <p class="border rounded ps-2 py-2 mt-2 bg-white"><%= current_user.email %></p>
         </div>
       </div>
     </div>

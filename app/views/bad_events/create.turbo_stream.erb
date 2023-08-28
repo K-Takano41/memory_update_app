@@ -1,2 +1,2 @@
-<%= turbo_stream.replace "modal", partial: "shared/modal", locals: { bad_event: @bad_event } %>
+<%= turbo_stream.replace "modal", partial: "shared/modal", locals: { bad_event: @bad_event, prompts: @prompts } %>
 <%= turbo_stream_flash %>

@@ -36,6 +36,20 @@ $note: 960px;
     width: 300px;
     height: 400px;
   }
+
+  .girl-img {
+    width: 200px;
+    height: 300px;
+  }
+
+  .boy-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bad-container {
+    background: radial-gradient(ellipse farthest-corner, #f5f5f5 0%, #a9a9a9 100%);
+  }
 }
 
 
@@ -73,5 +87,19 @@ $note: 960px;
   .page-good-img{
     width: 300px;
     height: 400px;
+  }
+
+  .girl-img {
+    width: 200px;
+    height: 300px;
+  }
+
+  .boy-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bad-container {
+    background: radial-gradient(ellipse farthest-corner, #f5f5f5 0%, #a9a9a9 100%);
   }
 }

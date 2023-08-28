@@ -1,7 +1,7 @@
 <div class="container pt-3">
   <div class="row justify-content-center">
     <h2 class="text-center"><%= t('.title') %></h2>
-    <div class="col-10 col-lg-6 bg-white pt-3">
+    <div class="col-10 col-lg-6 py-3 border bg-light">
       <div class="col-10 col-lg-6 mx-auto mt-2">
         <%= bootstrap_form_with(model: @user, url: profiles_path, local: true) do |form| %>
           <%= form.text_field :name %>

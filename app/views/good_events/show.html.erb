@@ -7,7 +7,7 @@
             <%= GoodEvent.human_attribute_name(:date) %>
             <%= l @good_event.date, format: :short %>
           </div>
-          <div class="h2 text-center">
+          <div class="h2 text-center text-decoration-underline">
             <%= @good_event.title %>
           </div>
           <div class="row mx-1">
@@ -19,7 +19,7 @@
               <%= link_to t('defaults.edit'), edit_good_event_path %>
             </div>
           </div>
-          <div class="col-10 mx-auto">
+          <div class="col-10 mx-auto bg-white">
             <div class="p-1 border border-dark my-4 event-content">
               <%= nl2br(@good_event.body) %>
             </div>

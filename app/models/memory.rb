@@ -2,7 +2,6 @@ class Memory < ApplicationRecord
   mount_uploader :bad_image, BadImageUploader
   mount_uploader :good_image, GoodImageUploader
   
-
   belongs_to :user
   has_one :bad_event, dependent: :destroy
   has_many :good_events, dependent: :destroy

@@ -1,7 +1,7 @@
 module ImageApiMethod
   extend self
 
-  def create_image(memory, prompt_text, column_name)
+  def create_image(memory, prompt_text, negative_text, column_name)
 
     headers = {
       "Accept": "application/json",
@@ -16,10 +16,16 @@ module ImageApiMethod
       "seed": 0,
       "cgf_scale": 7,
       "style_preset": "enhance",
-      "text_prompts": [{
-        "text": prompt_text,
-        "weight": 1
-      }]
+      "text_prompts": [
+        {
+          "text": prompt_text,
+          "weight": 1
+        },
+        {
+          "text": negative_text,
+          "weight": -1
+        }
+      ]
     }
 
     response = Faraday.post(ENV["API_URL"]) do |res|

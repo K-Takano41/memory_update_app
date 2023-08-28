@@ -10,6 +10,7 @@ class BadEventsController < ApplicationController
     @memory = current_user.memories.build
     @bad_event = @memory.build_bad_event(bad_event_params)
     if @memory.save
+      @prompts = Prompt.all
       flash.now[:success] = t('defaults.message.created', item: BadEvent.human_attribute_name(:body))
     else
       flash.now[:danger] = t('defaults.message.failure', item: BadEvent.human_attribute_name(:body))

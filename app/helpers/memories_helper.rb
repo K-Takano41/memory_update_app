@@ -9,4 +9,9 @@ module MemoriesHelper
       content_tag(:i, "", class: "fa-regular fa-face-meh fa-size mx-1")
     end
   end
+
+  def optimize_url(image_path)
+    no_cache_params = Time.parse(File.mtime("#{Rails.public_path}#{image_path}").to_s).to_i
+    resource_absolute_path = "#{image_path}?#{no_cache_params}"
+  end
 end
