@@ -32,6 +32,8 @@ ja:
         question: '質問'
         bad_prompt: 'バッドプロンプト'
         good_prompt: 'グッドプロンプト'
+        bad_negative_prompt: 'ネガティブプロンプト（バッドイメージ）'
+        good_negative_prompt: 'ネガティブプロンプト（グッドイメージ）'
     errors:
       models:
         user:
@@ -51,8 +53,10 @@ ja:
           format: "%{message}"
           blank: '入力してください'
           attributes:
+            base:
+              events_count_limited: 'これ以上は登録できません'
             date:
-              # less_than_or_equal_to: '今日、または過去の日付を入力してください'
+              less_than_or_equal_to: '今日、または過去の日付を入力してください'
         prompt:
           format: "%{message}"
           blank: '入力してください'

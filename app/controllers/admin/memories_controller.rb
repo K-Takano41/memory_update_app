@@ -1,7 +1,7 @@
 class Admin::MemoriesController < Admin::BaseController
   before_action :set_memory, only: %i[show destroy]
   def index
-    @memories = Memory.all.includes(:user).page(params[:page])
+    @memories = Memory.all.includes(:user).order(id: :desc).page(params[:page])
   end
 
   def show

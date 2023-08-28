@@ -1,20 +1,23 @@
 <%= turbo_frame_tag "modal" %>
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="row justify-content-center">
-        <div class="col-10 col-lg-6 bg-white border border-dark pt-3 mt-5">
-          <h2 class="text-center mt-2"><%= t('.title') %></h2>
-          <%= bootstrap_form_with(model: @bad_event, data: { turbo_frame: "modal"}) do |form| %>
-            <div class="col-10 mx-auto my-4">
-              <%= form.text_area :body, rows: "10" %>
-            </div>
-            <div class="text-center mb-3">
-              <%= form.primary %>
-            </div>
-          <% end %>
+<div class="container bad-container">
+  <div class="row justify-content-center mx-0 pb-5">
+    <h2 class="text-center mt-2"><%= t('.title') %></h2>
+    <div class="col-2 col-lg-3 d-flex align-items-start justify-content-center mt-4">
+      <%= image_tag "girl.png", size: "50x50", class: "girl-img" %>
+    </div>
+    <div class="col-8 col-lg-6 border border-dark pt-3 mt-2">
+      <p class="text-center"><%= t('.message') %></p>
+      <%= bootstrap_form_with(model: @bad_event, data: { turbo_frame: "modal"}) do |form| %>
+        <div class="col-10 mx-auto my-4">
+          <%= form.text_area :body, rows: "10" %>
         </div>
-      </div>
+        <div class="text-center mb-3">
+          <%= form.primary %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-2 col-lg-3 d-flex align-items-end justify-content-center">
+      <%= image_tag "boy.png",size: "50x50", class: "boy-img" %>
     </div>
   </div>
 </div>

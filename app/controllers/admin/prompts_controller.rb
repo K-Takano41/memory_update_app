@@ -1,7 +1,7 @@
 class Admin::PromptsController < Admin::BaseController
   before_action :set_prompt, only: %i[show edit update destroy]
   def index
-    @prompts = Prompt.all.page(params[:page])
+    @prompts = Prompt.all.order(id: :desc).page(params[:page])
   end
 
   def new
@@ -41,7 +41,7 @@ class Admin::PromptsController < Admin::BaseController
   private
 
   def prompt_params
-    params.require(:prompt).permit(:question, :bad_prompt, :good_prompt)
+    params.require(:prompt).permit(:question, :bad_prompt, :good_prompt, :bad_negative_prompt, :good_negative_prompt)
   end
 
   def set_prompt

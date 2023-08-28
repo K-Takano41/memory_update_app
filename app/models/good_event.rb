@@ -5,14 +5,12 @@ class GoodEvent < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
   validates :date, presence: true, comparison: { less_than_or_equal_to: Proc.new{ Time.zone.now } }
-  # validate :date_check
-  # validate :events_count_limit, on: :create
-
+  validate :events_count_limit
   private
 
-  # def events_count_limit
-  #   if memory.good_events.count >= MAX_EVENT_COUNT
-  #     errors.add :base, t('defaults.message.max_count')
-  #   end
-  # end
+  def events_count_limit
+    if memory.good_events.count >= MAX_EVENT_COUNT
+      errors.add :base, :events_count_limited
+    end
+  end
 end

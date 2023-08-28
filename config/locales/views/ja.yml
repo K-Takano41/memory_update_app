@@ -7,8 +7,9 @@ ja:
     warning: '警告'
     menu: 'メニュー'
     new: '新規投稿'
-    edit: '編集'
+    edit: '編集する'
     back: '戻る'
+    cancel: 'キャンセル'
     logged_in: 'ログイン中のユーザー'
     password_reset: 'パスワードリセット'
     next: '次へ'
@@ -22,7 +23,6 @@ ja:
       login_message: 'ログインしてください'
       not_view: '閲覧できません'
       not_authorized: '権限がありません'
-      max_count: 'これ以上は登録できません'
   users:
     new:
       title: 'ユーザー登録'
@@ -58,14 +58,21 @@ ja:
       title: 'マイイラスト一覧'
       event_show: '投稿したエピソードを見る'
       new_good_event: '良かった出来事を投稿する'
+      registered_events: '登録したエピソード'
     user_memories:
       title: 'あなたのイラスト'
       message: '画像をクリックしてエピソードの詳細へ'
   bad_events:
     new:
-      title: 'エピソード登録'
+      title: 'どんなことがありましたか'
+      message: 'あなたが経験した嫌な出来事を教えてください'
     message:
       create_wait: 'このエピソードがまだ途中です'
+  good_events:
+    new:
+      title: 'どんな良いことがあったのかな？'
+    edit:
+      title: 'エピソードを編集する'
   password_resets:
     new:
       title: 'パスワードリセット申請'

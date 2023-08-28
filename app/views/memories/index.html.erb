@@ -1,5 +1,5 @@
 <div class="container index-container">
-  <div class="row mx-0 justify-content-lg-center">
+  <div class="row mx-0">
     <h2 class="text-center"><%= t('.title') %></h2>
     <% if @memories.present? %>
       <%= render partial: "memory", collection: @memories %>
@@ -7,5 +7,7 @@
       <p>なし</p>
     <% end %>
   </div>
-  <%= paginate @memories, theme: 'bootstrap-5' %>
+  <div class="py-3">
+    <%= paginate @memories, theme: 'bootstrap-5' %>
+  </div>
 </div>

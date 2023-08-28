@@ -3,8 +3,8 @@ $(window).on('turbo:load', function(){
   pages.removeClass('flipped');
   
   if (window.matchMedia('(max-width: 576px)').matches){
-    $('.page-inner:not(:first)').append(' <button class="prev-btn ms-5">前へ</button>');
-    $('.page-inner:not(:last)').append(' <button class="next-btn float-end me-5">次へ</button>');
+    $('.page-inner:not(:first)').append(' <button class="prev-btn"><i class="fa-solid fa-arrow-left"></i></button>');
+    $('.page-inner:not(:last)').append(' <button class="next-btn float-end"><i class="fa-solid fa-arrow-right"></i></button>');
 
     pages.each(function(i) {
       var page = $(this);
