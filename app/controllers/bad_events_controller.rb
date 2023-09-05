@@ -9,9 +9,9 @@ class BadEventsController < ApplicationController
   def create
     @memory = current_user.memories.build
     @bad_event = @memory.build_bad_event(bad_event_params)
-    if @memory.save
-      @prompts = Prompt.all
-      flash.now[:success] = t('defaults.message.created', item: BadEvent.human_attribute_name(:body))
+    if @bad_event.valid?
+      session[:bad_body] = @bad_event.body
+      @prompts = Prompt.all.order(id: :asc)
     else
       flash.now[:danger] = t('defaults.message.failure', item: BadEvent.human_attribute_name(:body))
       render turbo_stream: turbo_stream.append('flashes', partial: "shared/flash_message"), status: :unprocessable_entity

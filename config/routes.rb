@@ -26,9 +26,8 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :password_resets, only: %i[new create edit update]
   resource :profiles, only: %i[show edit update]
-  resources :bad_events, only: %i[new create edit update] do
-    get 'image', to: 'images#generate'
-  end
+  resources :bad_events, only: %i[new create edit update]
+  get 'generate', to: 'images#generate'
   resources :memories, only: %i[index show], shallow: true do
     get 'status_change', on: :member
     get 'user_memories', on: :collection

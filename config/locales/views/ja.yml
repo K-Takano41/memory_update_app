@@ -10,6 +10,7 @@ ja:
     edit: '編集する'
     back: '戻る'
     cancel: 'キャンセル'
+    nothing: '投稿がありません'
     logged_in: 'ログイン中のユーザー'
     password_reset: 'パスワードリセット'
     next: '次へ'
@@ -59,20 +60,31 @@ ja:
       event_show: '投稿したエピソードを見る'
       new_good_event: '良かった出来事を投稿する'
       registered_events: '登録したエピソード'
+    status_change:
+      message: 'Congratulations!! 思い出が更新されました!'
     user_memories:
       title: 'あなたのイラスト'
       message: '画像をクリックしてエピソードの詳細へ'
   bad_events:
     new:
-      title: 'どんなことがありましたか'
-      message: 'あなたが経験した嫌な出来事を教えてください'
+      title: 'どんなことがあったんですか'
+      message: |
+        あなたが経験した嫌な出来事を教えてください
+        この投稿は他の人が見ることはありません
     message:
       create_wait: 'このエピソードがまだ途中です'
   good_events:
     new:
-      title: 'どんな良いことがあったのかな？'
+      title: 'どんな素敵なことがあったんですか'
+      message: |
+        嬉しかったこと、良かったと思えたこと、
+        ほんの些細な出来事でもいいので教えてください
     edit:
       title: 'エピソードを編集する'
+  images:
+    generate:
+      success: '投稿を登録・イラストを生成しました'
+      danger: '申し訳ありません。イラスト生成に失敗しました。再度入力と選択をしてください'
   password_resets:
     new:
       title: 'パスワードリセット申請'

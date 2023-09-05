@@ -13,6 +13,13 @@ header {
 }
 
 .top-container {
+  height: 700px;
+  background-image: image-url("top-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.message-container{
   background: linear-gradient(to left, rgba(169,169,169,0.8), #d3d3d3, #fffafa, #d3d3d3, rgba(169,169,169,0.8));
 }
 
@@ -68,6 +75,12 @@ header {
   background-image: image-url("wall.jpg");
   background-repeat: repeat;
   background-size: contain;
+}
+
+.good-container {
+  background-image: image-url("back1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bad-container {

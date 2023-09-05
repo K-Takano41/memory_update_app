@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container good-container">
   <div class="row">
     <div class="col-12">
       <div class="row justify-content-center">
@@ -7,6 +7,7 @@
             <%= t('.title') %>
           </h2>
           <div class="border border-dark pt-2 mt-2">
+            <%= simple_format(t('.message'), class: "text-center") %>
             <%= render partial: "form", locals: { memory: @memory, good_event: @good_event} %>
           </div>
         </div>

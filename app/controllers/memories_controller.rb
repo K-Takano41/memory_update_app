@@ -15,10 +15,10 @@ class MemoriesController < ApplicationController
   end
 
   def status_change
-    if @memory.bad? && @memory.good_events.count == 5 # 削除を想定してないのでifは本来不要
+    if @memory.bad? && @memory.good_events.count == 5
       @memory.good!
       @memory.image_composite
-      redirect_to memory_path, success: "やったね。思い出が更新されたよ"
+      redirect_to memory_path, success: t('.message')
     end
   end
 
