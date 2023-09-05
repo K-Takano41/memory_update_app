@@ -1,8 +1,10 @@
-<div class="container">
+<div class="container user-container">
   <div class="row justify-content-center mx-0">
     <div class="col-10 col-lg-12 mt-2">
-      <h2 class="text-center"><%= t('.title') %></h2>
-      <p class="text-center"><%= t('.message') %></p>
+      <div class="text-center">
+        <h2><%= t('.title') %></h2>
+        <p><%= t('.message') %></p>
+      </div>
       <div class="book bound">
         <div class="pages">
           <% if @memories.present? %>

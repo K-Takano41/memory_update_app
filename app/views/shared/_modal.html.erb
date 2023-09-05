@@ -1,14 +1,17 @@
 <%= turbo_frame_tag "modal" do %>
   <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" data-controller="modal">
-    <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">タイトル</h5>
+          <div class="modal-title mx-auto">
+            <h5 class="text-center">
+              その出来事を思い出す時あなたは心にどんな感情を抱きますか？<br>
+              近いものを選んでください
+            </h5>
+          </div>
         </div>
         <div class="modal-body">
-          <div class="d-flex flex-wrap">
-            <%= render partial: "bad_events/prompt", collection: @prompts, locals: { bad_event: bad_event } %>
-          </div>
+          <%= render partial: "bad_events/prompt", collection: @prompts %>
         </div>
       </div>
     </div>

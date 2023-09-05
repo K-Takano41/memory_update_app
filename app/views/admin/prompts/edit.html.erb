@@ -7,10 +7,10 @@
       <%= bootstrap_form_with(model: @prompt, url: admin_prompt_path(@prompt), local: true) do |form| %>
         <%= render 'shared/admin_error', object: form.object %>
         <%= form.text_field :question %>
-        <%= form.text_field :bad_prompt %>
-        <%= form.text_field :bad_negative_prompt %>
-        <%= form.text_field :good_prompt %>
-        <%= form.text_field :good_negative_prompt %>
+        <%= form.text_area :bad_prompt, rows: "3" %>
+        <%= form.text_area :bad_negative_prompt, rows: "3" %>
+        <%= form.text_area :good_prompt, rows: "3" %>
+        <%= form.text_area :good_negative_prompt, rows: "3" %>
         <%= form.primary %>
         <%= link_to t('admin.defaults.back'), 'javascript:history.back()', class: "btn btn-primary" %>
       <% end %>

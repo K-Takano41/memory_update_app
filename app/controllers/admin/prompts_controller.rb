@@ -1,7 +1,7 @@
 class Admin::PromptsController < Admin::BaseController
   before_action :set_prompt, only: %i[show edit update destroy]
   def index
-    @prompts = Prompt.all.order(id: :desc).page(params[:page])
+    @prompts = Prompt.all.order(id: :asc).page(params[:page])
   end
 
   def new
@@ -26,7 +26,7 @@ class Admin::PromptsController < Admin::BaseController
 
   def update
     if @prompt.update(prompt_params)
-      redirect_to admin_prompts_path, success: t('defaults.message.updated', item: Prompt.model_name.human)
+      redirect_to admin_prompt_path, success: t('defaults.message.updated', item: Prompt.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_updated', item: Prompt.model_name.human)
       render :edit, status: :unprocessable_entity

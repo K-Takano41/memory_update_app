@@ -1,54 +1,89 @@
 <div class="container">
-  <div class="top-container py-5">
+  <div class="top-container py-5 d-flex align-items-center justify-content-center">
     <div class="text-center">
-      <h1 class="py-2">思い出更新アプリ</h1>
-      <h3 class="py-2">
+      <h1 class="pb-5 fw-bold text-white">思い出更新<br><br>〜Memory Update〜</h1>
+      <h3 class="mt-4 py-5 text-white">
         あなたには忘れたくても忘れられない、嫌な記憶はありますかーー？
       </h3>
-      <h5 class="lh-lg">
+    </div>
+  </div>
+  <div class="message-container">
+    <div class="text-center">
+      <h5 class="lh-lg pt-5">
         辛い出来事、嫌な出来事ほど忘れられず鮮明に覚えているもの<br>
-        反対に良い思い出は悪い記憶にかき消されてしまってどんどん不鮮明になってしまう。<br>
-        あったはずの良い思い出。けれど過去を振り返るたび思い出すのは嫌な記憶ばかり。<br>
-        それが足枷になって躓いてしまったり、次の一歩が踏み出せなかったり。そう言う経験ありませんか？
+      </h5>
+      <h5 class="lh-lg py-2">
+        反対に良い思い出は悪い記憶にかき消されてしまって<br>
+        どんどん不鮮明になってしまう。
+      </h5>
+      <h5 class="lh-lg py-2">
+        あったはずの良い思い出。<br>
+        けれど過去を振り返るたび思い出すのは嫌な記憶ばかり。
+      </h5>
+      <h5 class="lh-lg py-2 mb-0">
+        それが足枷になって躓いてしまったり、<br>
+        次の一歩が踏み出せなかったり、<br>
+        そう言う経験はありませんか？
       </h5>
     </div>
   </div>
   <div class="row justify-content-center how-container mx-0">
-    <h5 class="text-center mt-3">このアプリではそんな嫌な記憶を、良かった出来事・良い思い出の積み重ねで上書きしていきます</h5>
+    <h5 class="text-center pt-5 mt-3">このアプリではそんな嫌な記憶を、嬉しかった出来事・良かった思い出の積み重ねで上書きしていきます</h5>
     <h4 class="text-center my-4">〜このアプリの使い方〜</h4>
     <div class="col-10">
       <div class="row">
         <div class="col-lg-4 col-12 mb-3">
-          1. エピソードを投稿します
-          <div class="card my-2">
-            <%= image_tag "post_img.png", class: "card-img-top" %>
+          <div class="card h-100 bg-transparent border-0">
+            <div class="card-body">
+              <h6 class="card-title">
+                1. 『新規投稿』からエピソードを投稿します
+              </h6>
+            </div>
+            <%= image_tag "post_img.png", class: "card-img", size: "300x200" %>
           </div>
         </div>
         <div class="col-lg-4 col-12 mb-3">
-          2. 選択肢から一番近い感情を選びます
-          <div class="card my-2">
-            <%= image_tag "post_img.png", class: "card-img-top" %>
+          <div class="card h-100 bg-transparent border-0">
+            <div class="card-body">
+              <h6 class="card-title">
+                2. 選択肢の中から一つ選びます
+              </h6>
+            </div>
+            <%= image_tag "prompt_img.png", class: "card-img", size: "300x200" %>
           </div>
         </div>
         <div class="col-lg-4 col-12 mb-3">
-          3. イメージイラストが生成されます
-          <div class="card my-2">
-            <%= image_tag "post_img.png", class: "card-img-top" %>
+          <div class="card h-100 bg-transparent border-0">
+            <div class="card-body">
+              <h6 class="card-title">
+                3. 選択肢を元にイメージイラストが生成されます
+              </h6>
+            </div>
+            <%= image_tag "illust_img.png", class: "card-img", size: "300x200" %>
           </div>
         </div>
         <div class="col-lg-4 col-12 mb-3">
-          4. 良かった出来事を登録します
-          <div class="card my-2">
-            <%= image_tag "post_img.png", class: "card-img-top" %>
+          <div class="card h-100 bg-transparent border-0">
+            <div class="card-body">
+              <h6 class="card-title">
+                4. 良かった出来事を登録します
+              </h6>
+            </div>
+            <%= image_tag "post_img2.png", class: "card-img", size: "300x200" %>
           </div>
         </div>
         <div class="col-lg-4 col-12 mb-3">
-          5. エピソードを5つ登録すると...?
-          <div class="card my-2">
-            <%= image_tag "post_img.png", class: "card-img-top" %>
+          <div class="card h-100 bg-transparent border-0">
+            <div class="card-body">
+              <h6 class="card-title">
+                5. 良かった出来事を5つ登録するとイラストに変化が......?
+              </h6>
+            </div>
+            <%= image_tag "question.jpg", class: "card-img", size: "300x200" %>
           </div>
         </div>
       </div>
+      <p class="text-center">※各投稿は投稿者以外の人が閲覧できないようにしてあります</p>
     </div>
   </div>
 </div>

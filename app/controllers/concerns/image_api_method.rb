@@ -1,7 +1,7 @@
 module ImageApiMethod
   extend self
 
-  def create_image(memory, prompt_text, negative_text, column_name)
+  def create_image(prompt_text, negative_text)
 
     headers = {
       "Accept": "application/json",
@@ -10,12 +10,12 @@ module ImageApiMethod
     }
 
     body = {
-      "width": 512,
-      "height": 512,
-      "step": 50,
+      "steps": 30,
+      "width": 1024,
+      "height": 1024,
       "seed": 0,
-      "cgf_scale": 7,
-      "style_preset": "enhance",
+      "cfg_scale": 5,
+      "samples": 1,
       "text_prompts": [
         {
           "text": prompt_text,
@@ -33,6 +33,10 @@ module ImageApiMethod
       res.body = body.to_json
     end
 
+    if response.status != 200
+      return
+    end
+
     result = JSON.parse(response.body)
     image = result["artifacts"][0]["base64"]
 
@@ -40,7 +44,5 @@ module ImageApiMethod
     file.binmode
     file.write(Base64.decode64(image))
     file.rewind
-    memory.send("#{column_name}=", file)
-    memory.save
   end
 end
