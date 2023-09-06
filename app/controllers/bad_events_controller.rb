@@ -6,6 +6,9 @@ class BadEventsController < ApplicationController
     @bad_event = BadEvent.new
   end
 
+  def edit
+  end
+
   def create
     @memory = current_user.memories.build
     @bad_event = @memory.build_bad_event(bad_event_params)
@@ -16,9 +19,6 @@ class BadEventsController < ApplicationController
       flash.now[:danger] = t('defaults.message.failure', item: BadEvent.human_attribute_name(:body))
       render turbo_stream: turbo_stream.append('flashes', partial: "shared/flash_message"), status: :unprocessable_entity
     end
-  end
-
-  def edit
   end
 
   def update

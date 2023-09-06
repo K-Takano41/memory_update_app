@@ -1,9 +1,16 @@
 class GoodEventsController < ApplicationController
   before_action :set_good_event, only: %i[show edit update owner_only]
   before_action :owner_only, only: %i[show edit]
+
+  def show
+  end
+
   def new
     @good_event = GoodEvent.new
     @memory = Memory.find(params[:memory_id])
+  end
+
+  def edit
   end
 
   def create
@@ -15,12 +22,6 @@ class GoodEventsController < ApplicationController
       flash.now[:danger] = t('defaults.message.failure', item: GoodEvent.human_attribute_name(:body))
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
-  end
-
-  def edit
   end
 
   def update
