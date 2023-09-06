@@ -4,8 +4,14 @@ class Admin::PromptsController < Admin::BaseController
     @prompts = Prompt.all.order(id: :asc).page(params[:page])
   end
 
+  def show
+  end
+
   def new
     @prompt = Prompt.new
+  end
+
+  def edit
   end
 
   def create
@@ -16,12 +22,6 @@ class Admin::PromptsController < Admin::BaseController
       flash.now[:danger] = t('defaults.message.failure', item: Prompt.model_name.human)
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
-  end
-
-  def edit
   end
 
   def update
