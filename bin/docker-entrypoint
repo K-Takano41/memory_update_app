@@ -1,8 +1,5 @@
 #!/bin/bash -e
 
 # Add any container initialization steps here
-set -e
-
-rm -f /myapp/tmp/pids/server.pid
 
 exec "${@}"

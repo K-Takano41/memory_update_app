@@ -1,7 +1,6 @@
 class Memory < ApplicationRecord
   mount_uploader :bad_image, BadImageUploader
   mount_uploader :good_image, GoodImageUploader
-  
   belongs_to :user
   has_one :bad_event, dependent: :destroy
   has_many :good_events, dependent: :destroy
@@ -10,7 +9,7 @@ class Memory < ApplicationRecord
   enum status: { bad: 0, good: 1 }
 
   def image_composite
-    image_path = Rails.root.join("public#{good_image.url}")
+    image_path = good_image.path
     image = MiniMagick::Image.open(image_path)
     image.resize "1050x1050"
     frame_path = Rails.root.join("app/assets/images/frame.png")
@@ -20,7 +19,7 @@ class Memory < ApplicationRecord
       c.compose "over"
       c.geometry "+60+220"
     end
-    result.write(image_path)
-  end
 
+    self.good_image = result
+  end
 end
