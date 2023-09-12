@@ -1,13 +1,13 @@
-### 状態遷移図
-https://www.figma.com/file/x4PgmMIGZBC3dE9H9c7aZ7/%E7%84%A1%E9%A1%8C?type=design&node-id=0%3A1&mode=design&t=G1nv1Jj79mYlmwZS-1
-
-### ER図
-[![Image from Gyazo](https://i.gyazo.com/7b6cc40e1202c985d4ad08771cd3fe36.png)](https://gyazo.com/7b6cc40e1202c985d4ad08771cd3fe36)
+### サービス名
+Memory Update
 
 ### サービス概要
 辛い思い出や苦い経験をした人の
 忘れられない嫌な出来事を良い出来事で上塗りして
 その嫌な出来事に対する感情を緩和する手伝いをするアプリです
+
+### ターゲットユーザー
+過去に辛いことや苦しいことを経験し、その記憶が忘れられず強い自己否定感が生じてしまった人
 
 ### ユーザーが抱える課題
 辛かった出来事や苦しかった出来事が忘れられずに何度も思い出してしまい、その度に苦しくなってしまう
@@ -24,9 +24,6 @@ https://www.figma.com/file/x4PgmMIGZBC3dE9H9c7aZ7/%E7%84%A1%E9%A1%8C?type=design
 - 嫌な出来事を登録してそれをAIでイラスト化し、上記の「嬉しいと感じた」投稿が5つに達したらイラストをポジティブな印象のものに自動変化させる
   - イラストの変化によって嫌な記憶が良い記憶に上塗りされた感覚を視覚的に体験できる
   - 嫌な出来事と良い出来事を結びつけることにより「嫌な出来事があったけど良い出来事もあった」と自覚できるように促す。
-
-### メインのターゲットユーザー
-- 過去に辛いことや苦しいことを経験し、その記憶が忘れられず強い自己否定感が生じてしまった人
 
 ### 実装機能(MVP)
 - 全ユーザー
@@ -53,12 +50,20 @@ https://www.figma.com/file/x4PgmMIGZBC3dE9H9c7aZ7/%E7%84%A1%E9%A1%8C?type=design
 - README〜ER図作成：6/24〆切
 - メイン機能実装：6/25 - 7/26
 - β版をRUNTEQ内リリース（MVP）：9/7〆切
-- 本番リリース：9月中旬
+- 本番リリース：9月下旬
 
-### 技術
+### 使用技術
 - Rails7
 - postgresql
 - JavaScript
 - Bootstrap
 - fly.io
-- stability AI API(stable diffusion)(イラスト生成)
+- Stability AI API(stable diffusion)(イラスト生成)
+- MiniMagick
+- Cloudinary
+
+### 状態遷移図
+https://www.figma.com/file/x4PgmMIGZBC3dE9H9c7aZ7/%E7%84%A1%E9%A1%8C?type=design&node-id=0%3A1&mode=design&t=G1nv1Jj79mYlmwZS-1
+
+### ER図
+[![Image from Gyazo](https://i.gyazo.com/7b6cc40e1202c985d4ad08771cd3fe36.png)](https://gyazo.com/7b6cc40e1202c985d4ad08771cd3fe36)

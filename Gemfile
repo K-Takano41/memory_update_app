@@ -65,10 +65,11 @@ gem "faraday"
 gem "sidekiq"
 gem "redis"
 gem "kaminari"
-gem 'bootstrap5-kaminari-views'
+gem "bootstrap5-kaminari-views"
 gem "mini_magick"
 gem "carrierwave"
 gem "config"
+gem "cloudinary"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -101,3 +102,4 @@ group :test do
 end
 
 gem "dockerfile-rails", ">= 1.5", :group => :development
+gem 'mini_racer'

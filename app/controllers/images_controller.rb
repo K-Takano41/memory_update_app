@@ -4,19 +4,18 @@ class ImagesController < ApplicationController
     @memory = current_user.memories.build
     @bad_event = @memory.build_bad_event
     @bad_event.body = session[:bad_body]
-    session[:bad_body].clear
+    session[:bad_body] = ""
     @prompt = Prompt.find(params[:prompt_id])
     prompt_text = @prompt.bad_prompt
     negative_text = @prompt.bad_negative_prompt
-
-    @memory.bad_image = ImageApiMethod.create_image(prompt_text, negative_text)
-
+    
+    ImageApiMethod.create_image(prompt_text, negative_text, @memory, "bad_image") 
+    
     if @memory.save
       GenerateGoodImageJob.perform_later(@memory, @prompt)
       redirect_to memory_path(@memory), success: t('.success')
     else
-      flash.now[:danger] = t('.danger')
-      render 'bad_events/new', status: :unprocessable_entity
+      redirect_to new_bad_event_path, danger: t('.danger')
     end
 
   end

@@ -71,6 +71,7 @@ GEM
     ast (2.4.2)
     autoprefixer-rails (10.4.13.0)
       execjs (~> 2)
+    aws_cf_signer (0.1.3)
     base64 (0.1.1)
     bcrypt (3.1.19)
     bindex (0.8.1)
@@ -103,6 +104,9 @@ GEM
       image_processing (~> 1.1)
       marcel (~> 1.0.0)
       ssrf_filter (~> 1.0)
+    cloudinary (1.27.0)
+      aws_cf_signer
+      rest-client (>= 2.0.0)
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
     config (4.2.1)
@@ -117,6 +121,8 @@ GEM
     deep_merge (1.2.2)
     dockerfile-rails (1.5.1)
       rails
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -169,6 +175,9 @@ GEM
     globalid (1.1.0)
       activesupport (>= 5.0)
     hashie (5.0.0)
+    http-accept (1.7.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -211,6 +220,7 @@ GEM
       letter_opener (~> 1.7)
       railties (>= 5.2)
       rexml
+    libv8-node (18.16.0.0-aarch64-linux)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -222,8 +232,13 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mime-types (3.5.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2023.0808)
     mini_magick (4.12.0)
     mini_mime (1.1.2)
+    mini_racer (0.8.0)
+      libv8-node (~> 18.16.0.0)
     minitest (5.18.1)
     msgpack (1.7.1)
     multi_xml (0.6.0)
@@ -236,6 +251,7 @@ GEM
       timeout
     net-smtp (0.3.3)
       net-protocol
+    netrc (0.11.0)
     nio4r (2.5.9)
     nokogiri (1.15.2-aarch64-linux)
       racc (~> 1.4)
@@ -330,6 +346,11 @@ GEM
     regexp_parser (2.8.1)
     reline (0.3.5)
       io-console (~> 0.5)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rexml (3.2.5)
     rubocop (1.56.2)
       base64 (~> 0.1.1)
@@ -400,6 +421,9 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
     unicode-display_width (2.4.2)
     version_gem (1.1.3)
     web-console (4.2.0)
@@ -431,6 +455,7 @@ DEPENDENCIES
   bootstrap_form
   capybara
   carrierwave
+  cloudinary
   config
   debug
   dockerfile-rails (>= 1.5)
@@ -445,6 +470,7 @@ DEPENDENCIES
   kaminari
   letter_opener_web
   mini_magick
+  mini_racer
   omniauth
   omniauth-oauth2
   omniauth-rails_csrf_protection

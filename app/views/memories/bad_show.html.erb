@@ -2,26 +2,26 @@
   <div class="row mx-0 justify-content-center">
     <div class="col-lg-6 col-12 mt-2">
       <div class="text-center">
-        <%= image_tag memory.bad_image.url, class: "show-bad-image", size: "300x300" %>
+        <%= image_tag @memory.bad_image.url, class: "show-bad-image", size: "300x300" %>
       </div>
       <button class="btn btn-link text-start text-nowrap" id="toggle-button">
         <i class="fa-solid fa-caret-down fa-xl"></i>
         <%= t('memories.show.event_show')%>
       </button>
       <div id="event-body" class="text-wrap w-100 ps-2">
-        <%= render partial: "bad_events/bad_event", locals: { bad_event: memory.bad_event } %>
+        <%= render partial: "bad_events/bad_event", locals: { bad_event: @memory.bad_event } %>
       </div>
       <div class="rounded-pill bg-white mt-3 w-100 border d-flex align-items-center justify-content-around">
         <% 5.times do |i| %>
-          <%= good_icon(memory.good_events, i) %>
+          <%= good_icon(@good_events, i) %>
         <% end %>
       </div>
       <div class="text-center">
-        <%= link_to t('memories.show.new_good_event'), new_memory_good_event_path(memory), class: "btn-good-event mt-3 p-2 w-75"%>
+        <%= link_to t('memories.show.new_good_event'), new_memory_good_event_path(@memory), class: "btn-good-event mt-3 p-2 w-75"%>
       </div>
     </div>
-    <% if @memory.good_events.count == 5 %>
-      <%= render partial: "image_modal", locals: { memory: memory } %>
+    <% if @good_events.size == 5 %>
+      <%= render partial: "image_modal", locals: { memory: @memory } %>
     <% end %>
   </div>
 </div>

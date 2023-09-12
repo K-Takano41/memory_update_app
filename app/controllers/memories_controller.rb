@@ -12,14 +12,17 @@ class MemoriesController < ApplicationController
   end
   
   def show
+    @good_events = @memory.good_events
+    if @memory.bad?
+      render 'bad_show'
+    else
+      render 'good_show'
+    end
   end
 
   def status_change
-    if @memory.bad? && @memory.good_events.count == 5
-      @memory.good!
-      @memory.image_composite
-      redirect_to memory_path, success: t('.message')
-    end
+    @memory.good!
+    redirect_to memory_path, success: t('.message')
   end
 
   private

@@ -15,7 +15,7 @@
         </div>
         <div class="mb-3 col-6 text-center my-auto">
           <% if @memory.good_image.present? %>
-            <%= image_tag optimize_url(@memory.good_image.url), size: "250x300" %>
+            <%= image_tag @memory.good_image.url, size: "250x300" %>
           <% end %>
           <div>
             <%= Memory.human_attribute_name(:good_image) %>

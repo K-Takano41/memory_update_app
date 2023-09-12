@@ -1,18 +1,28 @@
 class GoodImageUploader < CarrierWave::Uploader::Base
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
+  if Rails.env.production?
+    include Cloudinary::CarrierWave
+
+    def public_id
+      return "good_images/" + Cloudinary::Utils.random_public_id;
+    end
+
+  else
+
+    storage :file
+
+    def store_dir
+      "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    end
+  end
+
+
   # Choose what kind of storage to use for this uploader:
-  storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
-
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
