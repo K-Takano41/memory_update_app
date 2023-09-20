@@ -15,6 +15,7 @@ ja:
     password_reset: 'パスワードリセット'
     next: '次へ'
     prev: '前へ'
+    confirm: '確認画面へ'
     message:
       created: "%{item}を登録しました"
       failure: "%{item}の登録に失敗しました"
@@ -27,10 +28,14 @@ ja:
   users:
     new:
       title: 'ユーザー登録'
-      password_html: '8文字以上・アルファベット大文字・小文字・数字・記号'
+      choice_message: '情報を入力して登録 または X(旧Twitter)アカウントで登録'
+      password_html: '8文字以上でアルファベットの大文字・小文字、数字、記号を含めてください'
+      confirm: '確認画面へ'
+    confirm:
+      title: '確認画面'
+      danger: '入力内容を確認してください'
     create:
       success: 'ユーザー登録完了 ログインしました'
-      danger: 'ユーザー登録に失敗しました'
   user_sessions:
     new:
       title: 'ログイン'
@@ -71,6 +76,9 @@ ja:
       message: |
         あなたが経験した嫌な出来事を教えてください
         この投稿は他の人が見ることはありません
+    confirm:
+      title: '確認画面'
+      danger: '入力内容を確認してください'
     message:
       create_wait: 'このエピソードがまだ途中です'
   good_events:
@@ -79,6 +87,8 @@ ja:
       message: |
         嬉しかったこと、良かったと思えたこと、
         ほんの些細な出来事でもいいので教えてください
+    confirm:
+      danger: '入力内容を確認してください'
     edit:
       title: 'エピソードを編集する'
   images:

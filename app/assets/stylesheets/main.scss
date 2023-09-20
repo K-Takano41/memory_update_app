@@ -12,6 +12,11 @@ header {
   min-height: 100vh;
 }
 
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .top-container {
   height: 700px;
   background-image: image-url("top-bg.jpg");

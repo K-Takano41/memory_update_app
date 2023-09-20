@@ -1,14 +1,17 @@
 <div class="container pt-3">
   <div class="row justify-content-center">
-    <h2 class="text-center"><%= t('.title') %></h2>
+    <div class="text-center">
+      <h2><%= t('.title') %></h2>
+      <p><%= t('.choice_message') %></p>
+    </div>
     <div class="col-10 col-lg-4 bg-white border border-dark pt-3">
-      <%= bootstrap_form_with(model: @user, local: true) do |form| %>
+      <%= bootstrap_form_with(model: @user, url: confirm_users_path, local: true, data: { turbo: false }) do |form| %>
         <%= form.text_field :name %>
         <%= form.email_field :email %>
         <%= form.password_field :password, help: t('.password_html')  %>
         <%= form.password_field :password_confirmation %>
         <div class="text-center">
-          <%= form.primary %>
+          <%= form.primary t('defaults.confirm') %>
         </div>
       <% end %>
       <p class="text-center my-1">OR</p>

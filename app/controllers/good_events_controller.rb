@@ -13,14 +13,22 @@ class GoodEventsController < ApplicationController
   def edit
   end
 
+  def confirm
+    @memory = Memory.find(params[:memory_id])
+    @good_event = @memory.good_events.build(good_event_params)
+    if @good_event.invalid?
+      flash.now[:danger] = t('.danger')
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def create
     @memory = Memory.find(params[:memory_id])
     @good_event = @memory.good_events.build(good_event_params)
-    if @good_event.save
-      redirect_to memory_path(@memory), success: t('defaults.message.created', item: GoodEvent.human_attribute_name(:body))
+    if params[:back] || !@good_event.save
+      render :new, status: :ok
     else
-      flash.now[:danger] = t('defaults.message.failure', item: GoodEvent.human_attribute_name(:body))
-      render :new, status: :unprocessable_entity
+      redirect_to memory_path(@memory), success: t('defaults.message.created', item: GoodEvent.human_attribute_name(:body))
     end
   end
 

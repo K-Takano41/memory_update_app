@@ -40,7 +40,8 @@ ja:
           format: "%{message}"
           blank: '入力してください'
           attributes:
-            email: 'すでに存在します'
+            email: 
+              taken: 'すでに存在します'
             password:
               invalid: '不正な値です'
               too_short: "%{count}文字以上で入力してください"

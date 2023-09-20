@@ -1,0 +1,43 @@
+<div class="container pt-3">
+  <div class="row justify-content-center">
+    <div class="text-center">
+      <h2><%= t('.title') %></h2>
+    </div>
+    <div class="col-10 col-lg-4 bg-white border border-dark pt-3">
+      <div class="mb-3">
+        <strong class="form-label"><%= User.human_attribute_name(:name) %></strong>
+        <div class="form-control">
+          <%= @user.name %>
+        </div>
+      </div>
+      <div class="mb-3">
+        <strong class="form-label"><%= User.human_attribute_name(:email) %></strong>
+        <div class="form-control">
+          <%= @user.email %>
+        </div>
+      </div>
+      <div class="mb-3">
+        <strong class="form-label"><%= User.human_attribute_name(:password) %></strong>
+        <div class="form-control">
+          *****
+        </div>
+      </div>
+      <div class="mb-3">
+        <strong class="form-label"><%= User.human_attribute_name(:password_confirmation) %></strong>
+        <div class="form-control">
+          *****
+        </div>
+      </div>
+      <%= bootstrap_form_with(model: @user, local: true) do |form| %>
+        <%= form.hidden_field :name %>
+        <%= form.hidden_field :email %>
+        <%= form.hidden_field :password %>
+        <%= form.hidden_field :password_confirmation %>
+        <div class="text-center mb-1">
+          <%= form.primary %>
+          <%= form.submit t('defaults.back'), name: :back, data: { turbo: false } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
