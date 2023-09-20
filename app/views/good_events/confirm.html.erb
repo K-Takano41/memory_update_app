@@ -1,0 +1,38 @@
+<%= turbo_frame_tag "good_event_confirm" do %>
+  <%= t('.title') %>
+  <div class="col-8 mx-auto my-4">
+    <div class="mb-3">
+      <div class="form-label">
+        <%= GoodEvent.human_attribute_name(:title) %>
+      </div>
+      <div class="form-control">
+        <%= @good_event.title %>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">
+        <%= GoodEvent.human_attribute_name(:body) %>
+      </div>
+      <div class="form-control" style="height: 120px;">
+        <%= @good_event.body %>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">
+        <%= GoodEvent.human_attribute_name(:date) %>
+      </div>
+      <div class="form-control">
+        <%= l @good_event.date, format: :short %>
+      </div>
+    </div>
+  </div>
+  <%= bootstrap_form_with(model: [@memory, @good_event], local: true) do |form| %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :body %>
+    <%= form.hidden_field :date %>
+    <div class="text-center mb-3">
+      <%= form.primary %>
+      <%= form.submit t('defaults.back'), name: :back %>
+    </div>
+  <% end %>
+<% end %>

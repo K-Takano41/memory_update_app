@@ -1,19 +1,20 @@
-<%= turbo_frame_tag "modal" %>
 <div class="container bad-container">
-  <div class="row justify-content-center mx-0 pb-5">
+  <div class="row justify-content-center pb-5">
     <h2 class="text-center mt-2"><%= t('.title') %></h2>
     <div class="col-2 col-lg-3 d-flex align-items-start justify-content-center mt-4">
       <%= image_tag "girl.png", size: "50x50", class: "girl-img" %>
     </div>
     <div class="col-8 col-lg-6 border border-dark pt-3 mt-2">
-      <p><%= simple_format(t('.message'), class: "text-center") %></p>
-      <%= bootstrap_form_with(model: @bad_event, data: { turbo_frame: "modal"}) do |form| %>
-        <div class="col-10 mx-auto my-4">
-          <%= form.text_area :body, rows: "10" %>
-        </div>
-        <div class="text-center mb-3">
-          <%= form.primary %>
-        </div>
+      <%= turbo_frame_tag "bad_event_confirm" do %>
+        <p><%= simple_format(t('.message'), class: "text-center") %></p>
+        <%= bootstrap_form_with(model: @bad_event, url: confirm_bad_events_path, local: true) do |form| %>
+          <div class="col-10 mx-auto my-4">
+            <%= form.text_area :body, rows: "10" %>
+          </div>
+          <div class="text-center mb-3">
+            <%= form.primary t('defaults.confirm') %>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <div class="col-2 col-lg-3 d-flex align-items-end justify-content-center">

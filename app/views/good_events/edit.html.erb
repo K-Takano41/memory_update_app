@@ -7,7 +7,17 @@
             <%= t('.title') %>
           </h2>
           <div class="border border-dark pt-2 mt-2">
-            <%= render partial: "form", locals: { memory: @memory, good_event: @good_event} %>
+            <%= bootstrap_form_with(model: [memory, good_event], local: true) do |form| %>
+              <div class="col-8 mx-auto my-4">
+                <%= form.text_field :title %>
+                <%= form.text_area :body, rows: "5" %>
+                <%= form.datetime_field :date %>
+              </div>
+              <div class="text-center mb-3">
+                <%= form.primary %>
+              </div>
+              <%= link_to t('defaults.back'), 'javascript:history.back()', class: "ps-2" %>
+            <% end %>
           </div>
         </div>
       </div>
