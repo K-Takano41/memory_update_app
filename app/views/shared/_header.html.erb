@@ -1,31 +1,31 @@
 <header>
   <nav class="navbar navbar-expand-lg navigation navbar-light mx-4">
-    <%= link_to "Memory Update", root_path, class: "navbar-brand fst-italic fw-bold text-light" %>
+    <%= link_to "Memory Update", root_path, class: "navbar-brand fst-italic fw-bold" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeaderContent" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end text-end" id="navbarHeaderContent">
       <div class="navbar-nav">
         <div class="nav-item nav-link">
-          <div class="text-white">
+          <div class="text-black">
             <%= "#{t('defaults.logged_in')} : #{current_user.name}" %>
           </div>
         </div>
         <div class="nav-item">
-          <%= link_to t('memories.index.to_title'), memories_path, class: "btn btn-info" %>
+          <%= link_to t('memories.index.to_title'), memories_path, class: "btn btn-primary" %>
         </div>
         <div class="nav-item">
-          <%= link_to t('defaults.new'), new_bad_event_path, class: "btn btn-info" %>
+          <%= link_to t('defaults.new'), new_bad_event_path, class: "btn btn-primary" %>
         </div>
         <div class="nav-item">
           <div class="dropdown">
-            <%= button_tag t('defaults.menu'), class: "btn btn-info dropdown-toggle", type: 'button', 'data-bs-toggle': 'dropdown', 'aria-expanded': 'false' %>
+            <%= button_tag t('defaults.menu.title'), class: "btn btn-primary dropdown-toggle", type: 'button', 'data-bs-toggle': 'dropdown', 'aria-expanded': 'false' %>
             <div class="dropdown-menu dropdown-menu-end">
-              <%= link_to t('memories.show.title'), user_memories_memories_path, class: "dropdown-item" %>
+              <%= link_to t('defaults.menu.index'), user_memories_memories_path, class: "dropdown-item" %>
               <% if current_user.memories.bad.exists? %>
-                <%= link_to BadEvent.human_attribute_name(:body), memory_path(current_user.memories.bad.first), class: "dropdown-item" %>
+                <%= link_to t('defaults.menu.episode'), memory_path(current_user.memories.bad.first), class: "dropdown-item" %>
               <% end %>
-              <%= link_to t('profiles.show.title'), profiles_path, class: "dropdown-item" %>
+              <%= link_to t('defaults.menu.profile'), profiles_path, class: "dropdown-item" %>
               <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "btn btn-primary dropdown-item" %>
             </div>
           </div>

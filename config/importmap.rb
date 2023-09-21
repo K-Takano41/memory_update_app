@@ -11,3 +11,4 @@ pin "animejs", to: "https://ga.jspm.io/npm:animejs@3.2.1/lib/anime.js"
 pin "jquery", to: "jquery.min.js", preload: true
 pin "toggle", to: "toggle.js"
 pin "book", to: "book.js"
+pin "tooltip", to: "tooltip.js"
