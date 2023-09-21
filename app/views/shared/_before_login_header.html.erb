@@ -1,13 +1,13 @@
 <header>
   <nav class="navbar navbar-expand-lg navigation navbar-light mx-4">
-    <%= link_to "Memory Update", root_path, class: "navbar-brand fst-italic fw-bold text-white" %>
+    <%= link_to "Memory Update", root_path, class: "navbar-brand fst-italic fw-bold" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeaderContent" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end text-end" id="navbarHeaderContent">
       <div class="navbar-nav">
         <div class="nav-item">
-          <%= link_to t('memories.index.to_title'), memories_path, class: "btn btn-info" %>
+          <%= link_to t('memories.index.to_title'), memories_path, class: "btn btn-primary" %>
         </div>
         <div class="nav-item">
           <%= link_to t('users.new.title'), new_user_path, class: "btn btn-primary" %>

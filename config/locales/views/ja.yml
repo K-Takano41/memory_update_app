@@ -5,7 +5,6 @@ ja:
     success: '成功'
     failure: '失敗'
     warning: '警告'
-    menu: 'メニュー'
     new: '新規投稿'
     edit: '編集する'
     back: '戻る'
@@ -16,6 +15,11 @@ ja:
     next: '次へ'
     prev: '前へ'
     confirm: '確認画面へ'
+    menu:
+      title: 'メニュー'
+      index: 'マイイラスト一覧'
+      episode: '入力中のエピソード'
+      profile: 'プロフィール情報'
     message:
       created: "%{item}を登録しました"
       failure: "%{item}の登録に失敗しました"
@@ -60,10 +64,11 @@ ja:
     index:
       to_title: 'イラスト一覧'
       title: 'みんなのイラスト一覧'
-    show:
-      title: 'マイイラスト一覧'
+    bad_show:
       event_show: '投稿したエピソードを見る'
+      info_message: '良かった出来事を投稿すると顔のマークが笑顔に変わります。笑顔マークをクリックすると投稿の詳細ページへジャンプします。'
       new_good_event: '良かった出来事を投稿する'
+    good_show:
       registered_events: '登録したエピソード'
     status_change:
       message: 'Congratulations!! 思い出が更新されました!'
@@ -88,6 +93,7 @@ ja:
         嬉しかったこと、良かったと思えたこと、
         ほんの些細な出来事でもいいので教えてください
     confirm:
+      title: '確認画面'
       danger: '入力内容を確認してください'
     edit:
       title: 'エピソードを編集する'
