@@ -1,5 +1,5 @@
 class GoodEvent < ApplicationRecord
-  MAX_EVENT_COUNT = 5
+  MAX_EVENT_COUNT = 3
   belongs_to :memory
 
   validates :title, presence: true
@@ -9,7 +9,7 @@ class GoodEvent < ApplicationRecord
   private
 
   def events_count_limit
-    if memory.good_events.count > MAX_EVENT_COUNT
+    if memory.good_events.count >= MAX_EVENT_COUNT
       errors.add :base, :events_count_limited
     end
   end

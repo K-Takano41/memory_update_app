@@ -17,7 +17,7 @@
         <% end %>
       </div>
       <div class="rounded-pill bg-white mt-3 w-100 border d-flex align-items-center justify-content-around">
-        <% 5.times do |i| %>
+        <% 3.times do |i| %>
           <%= good_icon(@good_events, i) %>
         <% end %>
       </div>
@@ -25,7 +25,7 @@
         <%= link_to t('.new_good_event'), new_memory_good_event_path(@memory), class: "btn-good-event mt-3 p-2 w-75"%>
       </div>
     </div>
-    <% if @good_events.size == 5 %>
+    <% if @good_events.count == 3 %>
       <%= render partial: "image_modal", locals: { memory: @memory } %>
     <% end %>
   </div>
