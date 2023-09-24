@@ -1,8 +1,14 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-6 col-12 mt-2">
-      <div class="text-center">
-        <%= image_tag @memory.bad_image.url, class: "show-bad-image", size: "300x300" %>
+      <div class="text-center" id="bad-img">
+        <% if @memory.bad_image.present? %>
+          <%= image_tag @memory.bad_image_url, class: "show-bad-image", size: "300x300" %>
+        <% else %>
+          <div id="generate-message" class="mx-auto" data-memory-id="<%= @memory.id %>">
+            <p>画像生成中</p>
+          </div>
+        <% end %>
       </div>
       <button class="btn btn-link text-start text-nowrap" id="toggle-button">
         <i class="fa-solid fa-caret-down fa-xl"></i>

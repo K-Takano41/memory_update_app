@@ -12,3 +12,4 @@ pin "jquery", to: "jquery.min.js", preload: true
 pin "toggle", to: "toggle.js"
 pin "book", to: "book.js"
 pin "tooltip", to: "tooltip.js"
+pin "bad_image", to: "bad_image.js"
