@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'signup/create'
   if Rails.env.development?
     require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq'
@@ -34,6 +33,7 @@ Rails.application.routes.draw do
   get 'generate', to: 'images#generate'
   resources :memories, only: %i[index show], shallow: true do
     get 'status_change', on: :member
+    get 'check_image_status', on: :member
     get 'user_memories', on: :collection
     resources :good_events, only: %i[new create show edit update] do
       post 'confirm', on: :collection

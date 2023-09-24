@@ -1,11 +1,11 @@
 class Memory < ApplicationRecord
   mount_uploader :bad_image, BadImageUploader
   mount_uploader :good_image, GoodImageUploader
+  
   belongs_to :user
   has_one :bad_event, dependent: :destroy
   has_many :good_events, dependent: :destroy
-
-  validates :bad_image, presence: true
+  
   enum status: { bad: 0, good: 1 }
 
   def image_composite

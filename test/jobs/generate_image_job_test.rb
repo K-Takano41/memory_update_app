@@ -1,6 +1,6 @@
 require "test_helper"
 
-class GenerateGoodImageJobTest < ActiveJob::TestCase
+class GenerateImageJobTest < ActiveJob::TestCase
   # test "the truth" do
   #   assert true
   # end

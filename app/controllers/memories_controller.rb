@@ -1,5 +1,5 @@
 class MemoriesController < ApplicationController
-  before_action :set_memory, only: %i[show status_change owner_only]
+  before_action :set_memory, only: %i[show status_change check_image_status owner_only]
   before_action :owner_only, only: %i[show status_change]
   skip_before_action :require_login, only: %i[index]
   
@@ -23,6 +23,14 @@ class MemoriesController < ApplicationController
   def status_change
     @memory.good!
     redirect_to memory_path, success: t('.message')
+  end
+
+  def check_image_status
+    if @memory.bad_image.present?
+      render json: { status: "complete", image_url: @memory.bad_image.url }
+    else
+      render json: { status: "incomplete" }
+    end
   end
 
   private

@@ -1,8 +1,7 @@
-module ImageApiMethod
-  extend self
+class GenerateImageJob < ApplicationJob
+  queue_as :default
 
-  def create_image(prompt_text, negative_text, memory, column_name)
-    
+  def perform(prompt_text, negative_text, memory, column_name)
     headers = {
       "Accept": "application/json",
       "Content-Type": "application/json",
@@ -33,10 +32,6 @@ module ImageApiMethod
       res.body = body.to_json
     end
 
-    if response.status != 200
-      return
-    end
-
     result = JSON.parse(response.body)
     image = result["artifacts"][0]["base64"]
 
@@ -46,5 +41,11 @@ module ImageApiMethod
     file.rewind
 
     memory.send("#{column_name}=", file)
+
+    memory.save
+
+    if column_name == "good_image"
+      memory.image_composite
+    end
   end
 end
