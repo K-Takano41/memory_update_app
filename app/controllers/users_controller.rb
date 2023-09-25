@@ -6,10 +6,10 @@ class UsersController < ApplicationController
 
   def confirm
     @user = User.new(user_params)
-    if @user.invalid?
-      flash.now[:danger] = t('.danger')
-      render :new, status: :unprocessable_entity
-    end
+    return if @user.valid?
+
+    flash.now[:danger] = t('.danger')
+    render :new, status: :unprocessable_entity
   end
 
   def create
@@ -27,5 +27,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :role)
   end
-
 end

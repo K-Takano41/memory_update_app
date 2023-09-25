@@ -5,7 +5,7 @@ class BadImageUploader < CarrierWave::Uploader::Base
     include Cloudinary::CarrierWave
 
     def public_id
-      return "bad_images/" + Cloudinary::Utils.random_public_id;
+      "bad_images/#{Cloudinary::Utils.random_public_id}"
     end
 
   else
@@ -16,7 +16,6 @@ class BadImageUploader < CarrierWave::Uploader::Base
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     end
   end
-
 
   # Choose what kind of storage to use for this uploader:
   # storage :fog

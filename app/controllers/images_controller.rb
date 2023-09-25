@@ -5,9 +5,9 @@ class ImagesController < ApplicationController
     @bad_event.body = session[:bad_body]
     session[:bad_body] = ""
     @prompt = Prompt.find(params[:prompt_id])
-    
+
     if @memory.save
-      GenerateImageJob.perform_later(@prompt.bad_prompt, @prompt.bad_negative_prompt, @memory, "bad_image") 
+      GenerateImageJob.perform_later(@prompt.bad_prompt, @prompt.bad_negative_prompt, @memory, "bad_image")
       GenerateImageJob.perform_later(@prompt.good_prompt, @prompt.good_negative_prompt, @memory, "good_image")
       redirect_to memory_path(@memory), success: t('.success')
     else

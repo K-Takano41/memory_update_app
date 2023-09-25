@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :bad_events, only: %i[edit update]
     resources :good_events, only: %i[edit update]
   end
-  
+
   root to: 'top#top'
   get 'auth/:provider/callback', to: 'twitter_sessions#create'
   get 'auth/failure', to: 'twitter_sessions#failure'
