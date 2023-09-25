@@ -3,49 +3,45 @@ class GenerateImageJob < ApplicationJob
 
   def perform(prompt_text, negative_text, memory, column_name)
     headers = {
-      "Accept": "application/json",
-      "Content-Type": "application/json",
-      "Authorization": "Bearer #{ENV["API_KEY"]}"
+      Accept: "application/json", 'Content-Type': "application/json", Authorization: "Bearer #{ENV.fetch('API_KEY')}"
     }
 
     body = {
-      "steps": 30,
-      "width": 1024,
-      "height": 1024,
-      "seed": 0,
-      "cfg_scale": 5,
-      "samples": 1,
-      "text_prompts": [
+      steps: 30,
+      width: 1024,
+      height: 1024,
+      seed: 0,
+      cfg_scale: 5,
+      samples: 1,
+      text_prompts: [
         {
-          "text": prompt_text,
-          "weight": 1
+          text: prompt_text,
+          weight: 1
         },
         {
-          "text": negative_text,
-          "weight": -1
+          text: negative_text,
+          weight: -1
         }
       ]
     }
 
-    response = Faraday.post(ENV["API_URL"]) do |res|
+    response = Faraday.post(ENV.fetch('API_URL')) do |res|
       res.headers = headers
       res.body = body.to_json
     end
 
     result = JSON.parse(response.body)
     image = result["artifacts"][0]["base64"]
-
     file = Tempfile.new(['img', '.png'])
     file.binmode
     file.write(Base64.decode64(image))
     file.rewind
 
     memory.send("#{column_name}=", file)
-
     memory.save
 
-    if column_name == "good_image"
-      memory.image_composite
-    end
+    return unless column_name == "good_image"
+
+    memory.image_composite
   end
 end

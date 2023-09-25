@@ -1,7 +1,6 @@
 class MemoriesController < ApplicationController
   before_action :set_memory, only: %i[show status_change check_image_status owner_only]
   before_action :owner_only, only: %i[show status_change]
-  skip_before_action :require_login, only: %i[index]
   
   def user_memories
     @memories = current_user.memories.good

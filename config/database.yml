@@ -19,7 +19,7 @@ default: &default
   username: memory_update_app
   encoding: unicode
   host: db
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
   password: <%= ENV["MEMORY_UPDATE_APP_DATABASE_PASSWORD"] %>
 
 
