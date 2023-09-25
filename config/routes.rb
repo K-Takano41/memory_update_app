@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     post 'confirm', on: :collection
   end
   get 'generate', to: 'images#generate'
-  resources :memories, only: %i[index show], shallow: true do
+  resources :memories, only: %i[show], shallow: true do
     get 'status_change', on: :member
     get 'check_image_status', on: :member
     get 'user_memories', on: :collection
