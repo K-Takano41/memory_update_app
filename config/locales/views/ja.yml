@@ -61,9 +61,6 @@ ja:
     edit:
       title: 'プロフィール編集'
   memories:
-    index:
-      to_title: 'イラスト一覧'
-      title: 'みんなのイラスト一覧'
     bad_show:
       event_show: '投稿したエピソードを見る'
       info_message: '良かった出来事を投稿すると顔のマークが笑顔に変わります。笑顔マークをクリックすると投稿の詳細ページへジャンプします。'

@@ -3,10 +3,6 @@ class MemoriesController < ApplicationController
   before_action :owner_only, only: %i[show status_change]
   skip_before_action :require_login, only: %i[index]
   
-  def index
-    @memories = Memory.good.includes(:user).page(params[:page])
-  end
-  
   def user_memories
     @memories = current_user.memories.good
   end
