@@ -15,7 +15,7 @@ $(document).on('turbo:load', function(){
             }
             
           } else {
-            setTimeout(checkImageStatus, 500);
+            setTimeout(checkImageStatus, 1000);
           }
         }
       })

@@ -2,6 +2,7 @@ ja:
   defaults:
     login: 'ログイン'
     logout: 'ログアウト'
+    guest_login: 'ゲストログイン'
     success: '成功'
     failure: '失敗'
     warning: '警告'
@@ -47,6 +48,8 @@ ja:
     create:
       success: 'ログインしました'
       danger: 'ログインできませんでした'
+    guest_login:
+      success: 'ゲストユーザーとしてログインしました'
     destroy:
       success: 'ログアウトしました'
   twitter_sessions:
@@ -60,6 +63,8 @@ ja:
       title: 'プロフィール情報'
     edit:
       title: 'プロフィール編集'
+    check_not_guest:
+      danger: 'ゲストアカウントはプロフィール情報を閲覧できません'
   memories:
     bad_show:
       event_show: '投稿したエピソードを見る'
@@ -83,6 +88,7 @@ ja:
       danger: '入力内容を確認してください'
     message:
       create_wait: 'このエピソードがまだ途中です'
+      guest_limit: 'ゲストユーザーはエピソードを1つしか投稿できません'
   good_events:
     new:
       title: 'どんな素敵なことがあったんですか'
