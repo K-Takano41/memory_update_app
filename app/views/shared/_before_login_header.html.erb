@@ -7,6 +7,9 @@
     <div class="collapse navbar-collapse justify-content-end text-end" id="navbarHeaderContent">
       <div class="navbar-nav">
         <div class="nav-item">
+          <%= link_to t('defaults.guest_login'), guest_login_path, data: { turbo_method: :post }, class: "btn btn-primary" %>
+        </div>
+        <div class="nav-item">
           <%= link_to t('users.new.title'), new_user_path, class: "btn btn-primary" %>
         </div>
         <div class="nav-item">

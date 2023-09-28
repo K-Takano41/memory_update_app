@@ -22,7 +22,9 @@
               <% if current_user.memories.bad.exists? %>
                 <%= link_to t('defaults.menu.episode'), memory_path(current_user.memories.bad.first), class: "dropdown-item" %>
               <% end %>
-              <%= link_to t('defaults.menu.profile'), profiles_path, class: "dropdown-item" %>
+              <% unless current_user.guest? %>
+                <%= link_to t('defaults.menu.profile'), profiles_path, class: "dropdown-item" %>
+              <% end %>
               <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "btn btn-primary dropdown-item" %>
             </div>
           </div>

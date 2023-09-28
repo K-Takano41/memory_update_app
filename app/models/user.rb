@@ -16,7 +16,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true
 
-  enum role: { general: 0, admin: 1 }
+  enum role: { general: 0, admin: 1, guest: 2 }
 
   private
 
@@ -34,6 +34,14 @@ class User < ApplicationRecord
       user.email = email
       user.password = Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true)
       user.password_confirmation = user.password
+    end
+  end
+
+  def self.guest
+    find_or_create_by!(name: 'ゲスト', email: "guest@example.com") do |user|
+      user.password = Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true)
+      user.password_confirmation = user.password
+      user.role = 2
     end
   end
 end

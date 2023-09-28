@@ -1,5 +1,6 @@
 class BadEventsController < ApplicationController
   before_action :set_bad_event, only: %i[edit update]
+  before_action :guest_user_limit, if: proc { current_user.guest? && current_user.memories.bad.empty? }, only: %i[new]
   before_action :has_bad_check, only: %i[new]
 
   def new
@@ -27,6 +28,7 @@ class BadEventsController < ApplicationController
       render :new, status: :ok
     else
       @prompts = Prompt.all.order(id: :asc)
+      render turbo_stream: turbo_stream.replace("modal", partial: "shared/modal", locals: { bad_event: @bad_event, prompts: @prompts }), status: :ok
     end
   end
 
@@ -57,6 +59,13 @@ class BadEventsController < ApplicationController
     if current_user.memories.bad.exists?
       @memory = current_user.memories.bad.first
       redirect_to memory_path(@memory), warning: t('.message.create_wait')
+    end
+  end
+
+  def guest_user_limit
+    if current_user.memories.count == 1
+      @memory = current_user.memories.first
+      redirect_to memory_path(@memory), danger: t('.message.guest_limit')
     end
   end
 end

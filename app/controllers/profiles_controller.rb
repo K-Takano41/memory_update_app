@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_current_user, only: %i[edit update]
+  before_action :check_not_guest, only: %i[show edit]
   def show
   end
 
@@ -23,5 +24,11 @@ class ProfilesController < ApplicationController
 
   def set_current_user
     @user = User.find(current_user.id)
+  end
+
+  def check_not_guest
+    return unless current_user.guest?
+
+    redirect_to root_path, danger: t('profiles.check_not_guest.danger')
   end
 end

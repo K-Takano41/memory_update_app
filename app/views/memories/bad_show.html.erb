@@ -7,6 +7,9 @@
         <% else %>
           <div id="generate-message" class="mx-auto" data-memory-id="<%= @memory.id %>">
             <p>画像生成中</p>
+            <div class="line-spin-fade-loader">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
           </div>
         <% end %>
       </div>
