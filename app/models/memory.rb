@@ -8,6 +8,8 @@ class Memory < ApplicationRecord
   
   enum status: { bad: 0, good: 1 }
 
+  validate :guest_memory_count, if: -> { user.guest? }
+
   def image_composite
     image_path = good_image.path
     image = MiniMagick::Image.open(image_path)
@@ -21,5 +23,9 @@ class Memory < ApplicationRecord
     end
 
     self.good_image = result
+  end
+
+  def guest_memory_count
+    errors.add :base, :guest_memory_count if user.memories.count >= 1
   end
 end

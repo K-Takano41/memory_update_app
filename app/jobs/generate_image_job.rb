@@ -1,6 +1,10 @@
 class GenerateImageJob < ApplicationJob
   queue_as :default
 
+  rescue_from StandardError do |exception|
+    logger.error("GenerateImageJobでエラーが発生しました: #{exception.message}")
+  end
+
   def perform(prompt_text, negative_text, memory, column_name)
     headers = {
       Accept: "application/json", 'Content-Type': "application/json", Authorization: "Bearer #{ENV.fetch('API_KEY')}"
@@ -30,18 +34,22 @@ class GenerateImageJob < ApplicationJob
       res.body = body.to_json
     end
 
-    result = JSON.parse(response.body)
-    image = result["artifacts"][0]["base64"]
-    file = Tempfile.new(['img', '.png'])
-    file.binmode
-    file.write(Base64.decode64(image))
-    file.rewind
+    if response.status == 200
+      result = JSON.parse(response.body)
+      image = result["artifacts"][0]["base64"]
+      file = Tempfile.new(['img', '.png'])
+      file.binmode
+      file.write(Base64.decode64(image))
+      file.rewind
 
-    memory.send("#{column_name}=", file)
-    memory.save
+      memory.send("#{column_name}=", file)
+      memory.save
 
-    return unless column_name == "good_image"
+      return unless column_name == "good_image"
 
-    memory.image_composite
+      memory.image_composite
+    else
+      logger.error("GenerateImageJobでAPIからエラーのレスポンスが返されました。ステータスコード: #{response.status}")
+    end
   end
 end
