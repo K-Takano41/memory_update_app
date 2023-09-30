@@ -16,7 +16,7 @@ class UserSessionsController < ApplicationController
   def guest_login
     session[:uuid] ||= Faker::Internet.uuid
     uuid = session[:uuid]
-    guest_user = User.guest(uuid)
+    guest_user = User.guest_account(uuid)
     auto_login(guest_user)
     redirect_to root_path, success: t('.success')
   end

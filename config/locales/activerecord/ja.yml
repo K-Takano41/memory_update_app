@@ -58,6 +58,11 @@ ja:
               events_count_limited: 'これ以上は登録できません'
             date:
               less_than_or_equal_to: '今日、または過去の日付を入力してください'
+        memory:
+          format: "%{message}"
+          attributes:
+            base:
+              guest_memory_count: 'ゲストユーザーはエピソードを1つしか投稿できません'
         prompt:
           format: "%{message}"
           blank: '入力してください'
