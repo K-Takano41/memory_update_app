@@ -162,9 +162,6 @@ GEM
     enum_help (0.0.19)
       activesupport (>= 3.0.0)
     erubi (1.12.0)
-    exception_notification (4.5.0)
-      actionmailer (>= 5.2, < 8)
-      activesupport (>= 5.2, < 8)
     execjs (2.8.1)
     faker (3.2.0)
       i18n (>= 1.8.11, < 2)
@@ -464,7 +461,6 @@ DEPENDENCIES
   dockerfile-rails (>= 1.5)
   dotenv-rails
   enum_help
-  exception_notification
   faker
   faraday
   font-awesome-sass

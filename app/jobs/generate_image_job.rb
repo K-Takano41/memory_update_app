@@ -49,7 +49,7 @@ class GenerateImageJob < ApplicationJob
 
       memory.image_composite
     else
-      logger.error("GenerateImageJobでAPIからエラーのレスポンスが返されました。ステータスコード: #{response.status}")
+      raise StandardError, "APIエラー。ステータスコード: #{response.status}"
     end
   end
 end
