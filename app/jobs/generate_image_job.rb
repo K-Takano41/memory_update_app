@@ -34,22 +34,20 @@ class GenerateImageJob < ApplicationJob
       res.body = body.to_json
     end
 
-    if response.status == 200
-      result = JSON.parse(response.body)
-      image = result["artifacts"][0]["base64"]
-      file = Tempfile.new(['img', '.png'])
-      file.binmode
-      file.write(Base64.decode64(image))
-      file.rewind
+    raise StandardError, "APIエラー。ステータスコード: #{response.status}" unless response.status == 200
 
-      memory.send("#{column_name}=", file)
-      memory.save
+    result = JSON.parse(response.body)
+    image = result["artifacts"][0]["base64"]
+    file = Tempfile.new(['img', '.png'])
+    file.binmode
+    file.write(Base64.decode64(image))
+    file.rewind
 
-      return unless column_name == "good_image"
+    memory.send("#{column_name}=", file)
+    memory.save
 
-      memory.image_composite
-    else
-      raise StandardError, "APIエラー。ステータスコード: #{response.status}"
-    end
+    return unless column_name == "good_image"
+
+    memory.image_composite
   end
 end

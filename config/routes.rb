@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   post 'guest_login', to: "user_sessions#guest_login"
   delete 'logout', to: 'user_sessions#destroy'
-  resources :users, only: %i[new create] do
+  resources :users, only: %i[new create destroy] do
     post 'confirm', on: :collection
   end
   resources :password_resets, only: %i[new create edit update]

@@ -12,6 +12,7 @@
           <%= User.human_attribute_name(:email) %>
           <p class="ps-2 py-2 mt-2 border-dark border-bottom"><%= current_user.email %></p>
         </div>
+        <%= link_to t('.account_delete'), user_path(current_user), data: { turbo_method: :delete, turbo_confirm: t('.confirm_message') }, class: "float-end" %>
       </div>
     </div>
   </div>

@@ -6,7 +6,7 @@
     <%= user.name %>
   </div>
   <div class="col-3 my-auto">
-    <%= user.email %>
+    <%= user.email.truncate(20) %>
   </div>
   <div class="col-3 my-auto">
     <%= user.role_i18n %>
