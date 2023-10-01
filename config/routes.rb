@@ -40,4 +40,6 @@ Rails.application.routes.draw do
       post 'confirm', on: :collection
     end
   end
+  get 'privacy_policy', to: "pages#privacy_policy"
+  get 'terms', to: "pages#terms"
 end
