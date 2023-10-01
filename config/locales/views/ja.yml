@@ -44,6 +44,8 @@ ja:
       danger: '入力内容を確認してください'
     create:
       success: 'ユーザー登録完了 ログインしました'
+    destroy:
+      success: 'アカウントを削除しました'
   user_sessions:
     new:
       title: 'ログイン'
@@ -64,6 +66,11 @@ ja:
   profiles:
     show:
       title: 'プロフィール情報'
+      account_delete: '退会する'
+      confirm_message: |
+        アカウントを削除します。本当によろしいですか？
+        アカウントを削除するとすべての投稿や生成されたイラストが同時に削除されます。
+        アカウント削除後、以前のアクセスやデータの復元はできません。
     edit:
       title: 'プロフィール編集'
     check_not_guest:

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new confirm create]
+  before_action :set_user, only: %i[destroy]
   def new
     @user = User.new
   end
@@ -22,7 +23,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    redirect_to root_path, success: t('.success'), status: :see_other
+  end
+
   private
+
+  def set_user
+    @user = User.find(current_user.id)
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :role)
