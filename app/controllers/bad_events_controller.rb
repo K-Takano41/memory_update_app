@@ -1,10 +1,10 @@
 class BadEventsController < ApplicationController
   before_action :set_bad_event, only: %i[edit update]
-  before_action :guest_user_limit, if: proc { current_user.guest? && current_user.memories.bad.empty? }, only: %i[new]
   before_action :has_bad_check, only: %i[new]
 
   def new
-    @bad_event = BadEvent.new
+    @memory = current_user.memories.build
+    @bad_event = @memory.build_bad_event
   end
 
   def edit
@@ -13,11 +13,11 @@ class BadEventsController < ApplicationController
   def confirm
     @memory = current_user.memories.build
     @bad_event = @memory.build_bad_event(bad_event_params)
-    if @bad_event.valid?
+    if @bad_event.valid? && @memory.valid?(:guest_memory_count_check)
       session[:bad_body] = @bad_event.body
     else
       flash.now[:danger] = t('.danger')
-      render turbo_stream: turbo_stream.append('flashes', partial: "shared/flash_message"), status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -59,13 +59,6 @@ class BadEventsController < ApplicationController
     if current_user.memories.bad.exists?
       @memory = current_user.memories.bad.first
       redirect_to memory_path(@memory), warning: t('.message.create_wait')
-    end
-  end
-
-  def guest_user_limit
-    if current_user.memories.count == 1
-      @memory = current_user.memories.first
-      redirect_to memory_path(@memory), danger: t('.message.guest_limit')
     end
   end
 end

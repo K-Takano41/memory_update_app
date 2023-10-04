@@ -15,7 +15,7 @@
               <%= GoodEvent.human_attribute_name(:body) %>
             </div>
             <div class="col text-end">
-              <%= link_to t('defaults.back'), 'javascript:history.back()' %>
+              <%= link_to t('defaults.back'), memory_path(@good_event.memory) %>
               <%= link_to t('defaults.edit'), edit_good_event_path %>
             </div>
           </div>

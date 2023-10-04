@@ -5,7 +5,7 @@
   <div class="card-body mx-3">
     <div>
       <%= bootstrap_form_with(model: @bad_event, url: admin_bad_event_path(@bad_event), local: true) do |form| %>
-        <%= render 'shared/admin_error', object: form.object %>
+        <%= render 'shared/error', object: form.object %>
         <%= form.text_field :body %>
         <%= form.primary %>
         <%= link_to t('admin.defaults.back'), 'javascript:history.back()', class: "btn btn-primary" %>

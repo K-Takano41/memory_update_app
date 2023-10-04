@@ -5,7 +5,7 @@
   <div class="card-body mx-3">
     <div>
       <%= bootstrap_form_with(model: @good_event, url: admin_good_event_path(@good_event), local: true) do |form| %>
-        <%= render 'shared/admin_error', object: form.object %>
+        <%= render 'shared/error', object: form.object %>
         <%= form.text_field :title %>
         <%= form.text_field :body %>
         <%= form.primary %>

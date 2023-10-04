@@ -146,6 +146,8 @@ ja:
         success: 'ユーザー登録を完了しました'
         danger: 'ユーザー登録に失敗しました'
     user_sessions:
+      new:
+        to_top: 'トップへ戻る'
       create:
         success: 'ログインしました'
         danger: 'ログインできませんでした'

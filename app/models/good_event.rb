@@ -5,7 +5,8 @@ class GoodEvent < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
   validates :date, presence: true, comparison: { less_than_or_equal_to: Proc.new{ Time.zone.now } }
-  validate :events_count_limit
+  validate :events_count_limit, on: :create
+
   private
 
   def events_count_limit
