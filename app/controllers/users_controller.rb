@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     return if @user.valid?
 
-    flash.now[:danger] = t('.danger')
     render :new, status: :unprocessable_entity
   end
 

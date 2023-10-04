@@ -41,7 +41,6 @@ ja:
       confirm: '確認画面へ'
     confirm:
       title: '確認画面'
-      danger: '入力内容を確認してください'
     create:
       success: 'ユーザー登録完了 ログインしました'
     destroy:
@@ -95,7 +94,6 @@ ja:
         この投稿は他の人が見ることはありません
     confirm:
       title: '確認画面'
-      danger: '入力内容を確認してください'
     message:
       create_wait: 'このエピソードがまだ途中です'
       guest_limit: 'ゲストユーザーはエピソードを1つしか投稿できません'
@@ -107,7 +105,6 @@ ja:
         ほんの些細な出来事でもいいので教えてください
     confirm:
       title: '確認画面'
-      danger: '入力内容を確認してください'
     edit:
       title: 'エピソードを編集する'
   images:

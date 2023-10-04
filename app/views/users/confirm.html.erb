@@ -1,4 +1,4 @@
-<div class="container pt-3">
+<%= turbo_frame_tag "user_confirm" do %>
   <div class="row justify-content-center">
     <div class="text-center">
       <h2><%= t('.title') %></h2>
@@ -28,16 +28,16 @@
           *****
         </div>
       </div>
-      <%= bootstrap_form_with(model: @user, local: true) do |form| %>
+      <%= bootstrap_form_with(model: @user, local: true, data: { turbo: false }) do |form| %>
         <%= form.hidden_field :name %>
         <%= form.hidden_field :email %>
         <%= form.hidden_field :password %>
         <%= form.hidden_field :password_confirmation %>
         <div class="text-center mb-1">
           <%= form.primary %>
-          <%= form.submit t('defaults.back'), name: :back, data: { turbo: false } %>
+          <%= form.submit t('defaults.back'), name: :back %>
         </div>
       <% end %>
     </div>
   </div>
-</div>
+<% end %>
