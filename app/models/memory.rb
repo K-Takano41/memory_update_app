@@ -1,14 +1,14 @@
 class Memory < ApplicationRecord
   mount_uploader :bad_image, BadImageUploader
   mount_uploader :good_image, GoodImageUploader
-  
+
   belongs_to :user
   has_one :bad_event, dependent: :destroy
   has_many :good_events, dependent: :destroy
-  
+
   enum status: { bad: 0, good: 1 }
 
-  validate :guest_memory_count, if: -> { user.guest? }
+  validate :guest_memory_count, if: -> { user.guest? }, on: :guest_memory_count_check
 
   def image_composite
     image_path = good_image.path

@@ -8,7 +8,8 @@
     <div class="col-8 col-lg-6 border border-dark pt-3 mt-2">
       <%= turbo_frame_tag "bad_event_confirm" do %>
         <p><%= simple_format(t('.message'), class: "text-center") %></p>
-        <%= bootstrap_form_with(model: @bad_event, url: confirm_bad_events_path, local: true) do |form| %>
+        <%= bootstrap_form_with(model: @bad_event, url: confirm_bad_events_path, local: true, data: { turbo: false }) do |form| %>
+          <%= render "shared/error", object: @memory %>
           <div class="col-10 mx-auto my-4">
             <%= form.text_area :body, rows: "10" %>
           </div>

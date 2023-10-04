@@ -38,11 +38,13 @@ class User < ApplicationRecord
   end
 
   def self.guest_account(uuid)
-    find_or_create_by!(email: "guest#{uuid}@example.com") do |user|
-      user.name = 'ゲスト'
-      user.password = Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true)
-      user.password_confirmation = user.password
-      user.role = 2
-    end
+    password = Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true)
+    create!(
+      name: 'ゲスト',
+      email: "guest#{uuid}@example.com",
+      password: password,
+      password_confirmation: password,
+      role: 2
+    )
   end
 end

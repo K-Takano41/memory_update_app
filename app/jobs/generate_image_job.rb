@@ -7,7 +7,7 @@ class GenerateImageJob < ApplicationJob
 
   def perform(prompt_text, negative_text, memory, column_name)
     headers = {
-      Accept: "application/json", 'Content-Type': "application/json", Authorization: "Bearer #{ENV.fetch('API_KEY')}"
+      Accept: "application/json", 'Content-Type': "application/json", Authorization: "Bearer #{ENV.fetch('API_KEY', nil)}"
     }
 
     body = {
@@ -29,7 +29,7 @@ class GenerateImageJob < ApplicationJob
       ]
     }
 
-    response = Faraday.post(ENV.fetch('API_URL')) do |res|
+    response = Faraday.post(ENV.fetch('API_URL', nil)) do |res|
       res.headers = headers
       res.body = body.to_json
     end
@@ -44,10 +44,9 @@ class GenerateImageJob < ApplicationJob
     file.rewind
 
     memory.send("#{column_name}=", file)
+
+    memory.image_composite if column_name == "good_image"
+
     memory.save
-
-    return unless column_name == "good_image"
-
-    memory.image_composite
   end
 end

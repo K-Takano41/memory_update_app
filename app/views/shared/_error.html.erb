@@ -1,4 +1,4 @@
-<% if object.errors.present? %>
+<% if object.errors.any? %>
   <% object.errors.full_messages.each do |error| %>
     <div id="error_messages" class="alert alert-danger"><%= error %></div>
   <% end %>

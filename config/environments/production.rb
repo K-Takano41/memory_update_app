@@ -63,16 +63,16 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { protocol: "https", host: "memory-update.fly.dev" }
+  config.action_mailer.default_url_options = { protocol: "https", host: "memory-update-app.com" }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
     domain: "gmail.com",
-    user_name: ENV.fetch('GMAIL_ADDRESS'),
-    password: ENV.fetch('GMAIL_PASS'),
-    authentication: :plain,
+    user_name: ENV.fetch('GMAIL_ADDRESS', nil),
+    password: ENV.fetch('GMAIL_PASS', nil),
+    authentication: :login,
     enable_starttls_auto: true
   }
 
