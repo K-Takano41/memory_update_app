@@ -46,8 +46,7 @@ class BadEventsController < ApplicationController
   private
 
   def set_bad_event
-    @memory = Memory.find(params[:id])
-    @bad_event = @memory.bad_event
+    @bad_event = BadEvent.find(params[:id])
   end
 
   def bad_event_params
