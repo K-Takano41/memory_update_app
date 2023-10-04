@@ -16,10 +16,9 @@ class GoodEventsController < ApplicationController
   def confirm
     @memory = Memory.find(params[:memory_id])
     @good_event = @memory.good_events.build(good_event_params)
-    if @good_event.invalid?
-      flash.now[:danger] = t('.danger')
-      render :new, status: :unprocessable_entity
-    end
+    return if @good_event.valid?
+
+    render :new, status: :unprocessable_entity
   end
 
   def create

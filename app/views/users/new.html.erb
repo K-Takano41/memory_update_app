@@ -1,23 +1,25 @@
 <div class="container pt-3">
-  <div class="row justify-content-center">
-    <div class="text-center">
-      <h2><%= t('.title') %></h2>
-      <p><%= t('.choice_message') %></p>
+  <%= turbo_frame_tag "user_confirm" do %>
+    <div class="row justify-content-center">
+      <div class="text-center">
+        <h2><%= t('.title') %></h2>
+        <p><%= t('.choice_message') %></p>
+      </div>
+      <div class="col-10 col-lg-4 bg-white border border-dark pt-3">
+        <%= bootstrap_form_with(model: @user, url: confirm_users_path, local: true) do |form| %>
+          <%= form.text_field :name %>
+          <%= form.email_field :email %>
+          <%= form.password_field :password, help: t('.password_html')  %>
+          <%= form.password_field :password_confirmation %>
+          <div class="text-center">
+            <%= form.primary t('defaults.confirm') %>
+          </div>
+        <% end %>
+        <p class="text-center my-1">OR</p>
+        <%= button_to "/auth/twitter2", method: :post, data: { turbo: false }, class: "btn btn-dark mb-3 d-block mx-auto" do %>
+          &#120143 Sign in with X
+        <% end %>
+      </div>
     </div>
-    <div class="col-10 col-lg-4 bg-white border border-dark pt-3">
-      <%= bootstrap_form_with(model: @user, url: confirm_users_path, local: true, data: { turbo: false }) do |form| %>
-        <%= form.text_field :name %>
-        <%= form.email_field :email %>
-        <%= form.password_field :password, help: t('.password_html')  %>
-        <%= form.password_field :password_confirmation %>
-        <div class="text-center">
-          <%= form.primary t('defaults.confirm') %>
-        </div>
-      <% end %>
-      <p class="text-center my-1">OR</p>
-      <%= button_to "/auth/twitter2", method: :post, data: { turbo: false }, class: "btn btn-dark mb-3 d-block mx-auto" do %>
-        &#120143 Sign in with X
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 </div>

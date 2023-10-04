@@ -16,7 +16,6 @@ class BadEventsController < ApplicationController
     if @bad_event.valid? && @memory.valid?(:guest_memory_count_check)
       session[:bad_body] = @bad_event.body
     else
-      flash.now[:danger] = t('.danger')
       render :new, status: :unprocessable_entity
     end
   end
