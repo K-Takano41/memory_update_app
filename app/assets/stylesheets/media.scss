@@ -42,16 +42,19 @@ $note: 960px;
     height: 400px;
   }
 
-  .girl-img {
-    width: 200px;
-    height: 300px;
+  .image-content {
+    width: 500px;
+    height: 500px;
   }
 
-  .boy-img {
-    width: 150px;
-    height: 150px;
+  .image-good {
+    position: absolute;
+    top: -7px;
+    left: -29px;
+    width: 111.5%;
+    height: 111.5%;
+    object-fit: cover;
   }
-
 }
 
 
@@ -96,13 +99,17 @@ $note: 960px;
     height: 400px;
   }
 
-  .girl-img {
-    width: 200px;
-    height: 300px;
+  .image-content {
+    width: 500px;
+    height: 500px;
   }
 
-  .boy-img {
-    width: 150px;
-    height: 150px;
+  .image-good {
+    position: absolute;
+    top: -7px;
+    left: -29px;
+    width: 111.5%;
+    height: 111.5%;
+    object-fit: cover;
   }
 }

@@ -2,10 +2,7 @@
 <div class="container">
   <div class="row justify-content-center pb-5">
     <h2 class="text-center mt-2"><%= t('.title') %></h2>
-    <div class="col-2 col-lg-3 d-flex align-items-start justify-content-center mt-4">
-      <%= image_tag "girl.png", size: "50x50", class: "girl-img" %>
-    </div>
-    <div class="col-8 col-lg-6 border border-dark pt-3 mt-2">
+    <div class="col-10 col-lg-8 border border-dark pt-3 mt-2">
       <%= turbo_frame_tag "bad_event_confirm" do %>
         <p><%= simple_format(t('.message'), class: "text-center") %></p>
         <%= bootstrap_form_with(model: @bad_event, url: confirm_bad_events_path, local: true) do |form| %>
@@ -18,9 +15,6 @@
           </div>
         <% end %>
       <% end %>
-    </div>
-    <div class="col-2 col-lg-3 d-flex align-items-end justify-content-center">
-      <%= image_tag "boy.png",size: "50x50", class: "boy-img" %>
     </div>
   </div>
 </div>
