@@ -10,7 +10,7 @@ Prompt.create!(
     {
       question: "真っ暗な水の底にいるような寂しさ",
       bad_prompt: "(underwater:1), masterpiece, realistic, view in the water, underwater, in the water, bottom of water, deep underwater, dark underwater, darkness, total darkness, deep in the water, clear water, limpid water, in the darkest of water, nothing at the bottom, nothing around, nothing is visible, no light, faintly bright",
-      bad_negative_prompt: "(fish, animals, living thing, sharks, dolphins, whales, mammals, creatures, character, person, human, people, hands, girl, man, plants, seaweed, aquatic organism, machinery, ships, buildings, structures, artifacts), flat color, flat shading, low res, signature, watermark",
+      bad_negative_prompt: "(character, person, human, people, hands, girl, man, plants, seaweed, aquatic organism, fish, animals, living thing, sharks, dolphins, whales, mammals, creatures, machinery, ships, buildings, structures, artifacts), flat color, flat shading, low res, signature, watermark",
       good_prompt: "masterpiece, realistic, photo, landscapes, (sky:1), beautiful sky, (from below), blue sky, clear sky, midday, only sky, clear view, sunny, few cloud",
       good_negative_prompt: "(ground, plants, tree, building, character, person, human, people, hands, girl, man, organisms, creatures, animals), flat color, flat shading, low res, signature, watermark",
     },
