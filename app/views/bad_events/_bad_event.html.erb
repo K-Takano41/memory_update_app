@@ -1,5 +1,5 @@
 <%= turbo_frame_tag bad_event do %>
-  <%= raw(nl2br(bad_event.body)) %>
+  <%= simple_format(bad_event.body) %>
   <div class="mt-2">
     <%= link_to t('defaults.edit'), edit_bad_event_path(bad_event), class: "btn btn-primary" %>
   </div>
