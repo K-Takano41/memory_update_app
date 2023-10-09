@@ -1,20 +1,17 @@
 module ApplicationHelper
 
   def message_value(message_type)
-    if message_type == 'success'
+    case message_type
+    when 'success'
       t('defaults.success')
-    elsif message_type == 'danger'
+    when 'danger'
       t('defaults.failure')
-    elsif message_type == 'warning'
+    when 'warning'
       t('defaults.warning')
     end
   end
 
   def turbo_stream_flash
     turbo_stream.append "flashes", partial: "shared/flash_message"
-  end
-
-  def nl2br(str)
-    h(str).gsub(/\R/, "<br>")
   end
 end

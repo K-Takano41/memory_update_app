@@ -10,6 +10,10 @@ footer {
   background-color: rgba(144, 237, 83, 0.5);
 }
 
+.text-stroke {
+  -webkit-text-stroke: 1px black;
+}
+
 .container {
   padding: 0;
   max-width: 100%;

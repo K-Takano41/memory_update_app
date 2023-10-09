@@ -82,7 +82,7 @@ ja:
     good_show:
       registered_events: '登録したエピソード'
     status_change:
-      message: 'Congratulations!! 思い出が更新されました!'
+      message: 'Congratulation!! 思い出が更新されました!'
     user_memories:
       title: 'あなたのイラスト'
       message: '画像をクリックしてエピソードの詳細へ'
@@ -90,7 +90,7 @@ ja:
     new:
       title: 'どんなことがあったんですか'
       message: |
-        あなたが経験した嫌な出来事を教えてください
+        あなたの思い出のボトルネック——気になってしまう出来事はなんですか
         この投稿は他の人が見ることはありません
     confirm:
       title: '確認画面'
@@ -103,6 +103,9 @@ ja:
       message: |
         嬉しかったこと、良かったと思えたこと、
         ほんの些細な出来事でもいいので教えてください
+      ex_message_morning: '例:『晴れやかな気分で目が覚めた』『朝の占いの結果が良かった』など'
+      ex_message_night: '例:『友人とご飯を食べてとても楽しい時間を過ごした』『夜空がとても綺麗だった』など'
+      ex_message: '例:『上司や周囲の人に褒められた』『ありがとうと感謝の言葉をもらった』など'
     confirm:
       title: '確認画面'
     edit:
