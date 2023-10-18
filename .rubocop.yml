@@ -9,3 +9,5 @@ AllCops:
   Exclude:
     - db/**/*
     - bin/*
+    - spec/*
+    - spec/*/*

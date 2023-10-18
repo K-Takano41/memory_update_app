@@ -70,6 +70,7 @@ gem "config"
 gem "cloudinary"
 gem "kaminari"
 gem "bootstrap5-kaminari-views"
+gem "meta-tags"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -77,7 +78,9 @@ group :development, :test do
   gem "pry-rails"
   gem "pry-nav"
   gem "letter_opener_web"
-  
+  gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -98,7 +101,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem "webdrivers"
 end
 
 gem "dockerfile-rails", ">= 1.5", :group => :development
