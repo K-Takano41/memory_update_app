@@ -22,6 +22,10 @@ module ApplicationHelper
         url: request.original_url,
         image: image_url('ogp.png'),
         locale: 'ja_JP'
+      },
+      twitter: {
+        card: 'summary_large_image',
+        site: '@KZ_TK12'
       }
     }
   end
