@@ -2,6 +2,6 @@
 SitemapGenerator::Sitemap.default_host = "https://memory-update-app.com"
 
 SitemapGenerator::Sitemap.create do
-  add '/top'
-  add root_path
+  add privacy_policy_path
+  add terms_path
 end
