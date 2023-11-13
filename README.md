@@ -29,7 +29,6 @@ Memory Update
 - 全ユーザー
   - ユーザー登録
   - twitter連携によるユーザー登録
-  - 全ユーザーの変化後のイラストが閲覧できる
 - 登録ユーザー
   - ログイン、ログアウト
     - パスワードリセット
@@ -45,20 +44,14 @@ Memory Update
   - 管理ユーザーの詳細、編集、削除ができる
   - イラスト生成用のプロンプトの一覧、詳細、編集、削除ができる
 
-### スケジュール
-- 企画〜技術調査：6/18〆切
-- README〜ER図作成：6/24〆切
-- メイン機能実装：6/25 - 7/26
-- β版をRUNTEQ内リリース（MVP）：9/7〆切
-- 本番リリース：9月下旬
-
 ### 使用技術
-- Rails7
-- postgresql
+- Ruby 3.2.1
+- Rails 7
+- postgresql 14.8
 - JavaScript
-- Bootstrap
+- Bootstrap 5
 - fly.io
-- Stability AI API(stable diffusion)(イラスト生成)
+- Stability AI API
 - MiniMagick
 - Cloudinary
 
@@ -66,4 +59,4 @@ Memory Update
 https://www.figma.com/file/x4PgmMIGZBC3dE9H9c7aZ7/%E7%84%A1%E9%A1%8C?type=design&node-id=0%3A1&mode=design&t=G1nv1Jj79mYlmwZS-1
 
 ### ER図
-[![Image from Gyazo](https://i.gyazo.com/7b6cc40e1202c985d4ad08771cd3fe36.png)](https://gyazo.com/7b6cc40e1202c985d4ad08771cd3fe36)
+[![Image from Gyazo](https://i.gyazo.com/19f11025a97b1004611f2e8c17d209a1.png)](https://gyazo.com/19f11025a97b1004611f2e8c17d209a1)
