@@ -2,12 +2,12 @@ module ApplicationHelper
 
   def default_meta_tags
     {
-      site: 'Memory-update',
+      site: 'Memory-Update',
       title: 'MemoryUpdate',
       reverse: true,
       charset: 'utf-8',
       description: 'このWEBアプリはユーザーのネガティブな思い出をポジティブな思い出で更新するアプリです',
-      keywords: 'memory update, memory-update, 思い出更新, 記憶 上書き, 思い出 更新, 嫌な思い出 上書き, 嫌な記憶 上書き',
+      keywords: 'memory update, memory-update, 嫌な思い出 上書き, 嫌な記憶 上書き, 思い出更新, 記憶 上書き, 思い出 更新',
       canonical: request.original_url,
       separator: '|',
       icon: [
