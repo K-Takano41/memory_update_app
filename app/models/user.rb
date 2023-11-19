@@ -38,11 +38,11 @@ class User < ApplicationRecord
   end
 
   def self.guest_account
-    no = User.guest.maximum(:id) + 1
+    num = User.guest.maximum(:id) + 1
     password = Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true)
     create!(
-      name: "ゲスト_#{no}",
-      email: "guest_#{no}@example.com",
+      name: "ゲスト_#{num}",
+      email: "guest_#{num}@example.com",
       password: password,
       password_confirmation: password,
       role: 2
